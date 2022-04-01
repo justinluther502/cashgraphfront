@@ -1,55 +1,48 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <router-view/>
+  <v-app id="inspire">
+    <top-nav />
+    <v-main class="grey lighten-3">
+      <v-container>
+        <v-row>
+          <v-col
+            cols="12"
+            sm="2"
+          >
+            <left-side />
+          </v-col>
+          <v-col
+            cols="12"
+            sm="8"
+          >
+            <v-sheet
+              min-height="70vh"
+              rounded="lg"
+            >
+              <router-view />
+            </v-sheet>
+          </v-col>
+          <v-col
+            cols="12"
+            sm="2"
+          >
+            <right-side />
+          </v-col>
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-
-export default {
-  name: 'App',
-
-  data: () => ({
-    //
-  }),
-};
+  import TopNav from "@/components/TopNav"
+  import LeftSide from "@/components/LeftSide"
+  import RightSide from "@/components/RightSide"
+  export default {
+    name: 'App',
+    components: {
+      TopNav,
+      LeftSide,
+      RightSide
+    },
+  }
 </script>
