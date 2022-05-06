@@ -1,16 +1,35 @@
 <template>
-  <div>
+  <v-card
+    flat
+    tile
+  >
     <view-header :title="title" :title_prefix="title_prefix" />
-  </div>
+    <risk-card
+      v-for="risk in risks"
+      :key="risk.id"
+      :name="risk.name"
+      :label="risk.label"
+      :desc="risk.description"
+      :pros="risk.pros"
+      :cons="risk.cons"
+    >
+    </risk-card>
+  </v-card>
 </template>
 
 <script>
-  import viewHeader from "@/components/ViewHeader"
+  import ViewHeader from "@/components/ViewHeader"
+  import RiskCard from "@/components/RiskCard"
+  import { get } from "vuex-pathify"
 
   export default {
     name: "RisksView.vue",
+    computed: {
+      risks: get('mpt_params/risk_measures')
+    },
     components: {
-      viewHeader,
+      ViewHeader,
+      RiskCard,
     },
     data() {
       return {
