@@ -10,7 +10,30 @@
         {{ flavor.label }}
       </v-tab>
     </v-tabs>
-    <p>{{ flavors[flavor_selection] }}</p>
+    <v-card elevation="4" class="ma-2" max-width="800">
+      <v-card-title>
+        {{ flavors[flavor_selection].label }}
+      </v-card-title>
+      <v-card-text>
+        {{ flavors[flavor_selection].description1 }}
+      </v-card-text>
+      <v-card-text>
+        {{ flavors[flavor_selection].description2 }}
+      </v-card-text>
+    </v-card>
+    <v-card elevation="4" class="ma-2" max-width="800">
+      <v-card-title>
+        Portfolio Assets
+      </v-card-title>
+      <v-list dense>
+        <v-list-item
+          v-for="asset in flavors[flavor_selection].assets"
+          :key="asset"
+        >
+          {{ asset }}
+        </v-list-item>
+      </v-list>
+    </v-card>
   </div>
 </template>
 
@@ -32,14 +55,6 @@
       return {
         title: "Flavors",
         title_prefix: "Asset Universe Selection",
-        model: 0,
-        colors: [
-          'primary',
-          'secondary',
-          'yellow darken-2',
-          'red',
-          'orange',
-        ],
       }
     },
     methods: {

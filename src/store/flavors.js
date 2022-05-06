@@ -6,9 +6,13 @@ const state = {
       id: 0,
       name: 'six_std',
       label: 'Six Asset Standard',
-      description: 'lorem ipsum dolor sit amet consectetur adipisicing elit. ' +
-        'Quisquam, quos.  Lorem ipsum dolor sit amet consectetur adipisicing ' +
-        'elit. Quisquam, quos.',
+      description1: `Six Asset Standard is the first flavor we created. It 
+      includes six asset classes. Each asset class's marginal distribution is
+      modeled as a normal distribution. The first level pair copulas are fully 
+      selected by the vine copula algorithm with no forced shapes. The higher
+      level vine copula structure is also fully selected by the algorithm.`,
+      description2: `We recommend variance as a risk measure for this flavor.
+      Semivariance won't add much because all of the marginals are normal.`,
       assets: [
         'U.S. Stocks',
         'Gold',
@@ -24,7 +28,10 @@ const state = {
       id: 1,
       name: 'fake',
       label: 'Fake Flavor',
-      description: 'lorem ipsum dolor sit amet consectetur adipisicing elit. ' +
+      description1: 'lorem ipsum dolor sit amet consectetur adipisicing elit. ' +
+        'Quisquam, quos.  Lorem ipsum dolor sit amet consectetur adipisicing ' +
+        'elit. Quisquam, quos.',
+      description2: 'lorem ipsum dolor sit amet consectetur adipisicing elit. ' +
         'Quisquam, quos.  Lorem ipsum dolor sit amet consectetur adipisicing ' +
         'elit. Quisquam, quos.',
       assets: [
