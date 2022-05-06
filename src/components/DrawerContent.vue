@@ -18,44 +18,12 @@
 </template>
 
 <script>
+  import { sync } from 'vuex-pathify'
   export default {
     name: "NavDrawer.vue",
-    data() {
-      return {
-        items: [
-          {
-            id: 0,
-            title: 'Optimizer Dashboard',
-            icon: 'mdi-chart-line',
-            to: '/',
-          },
-          {
-            id: 1,
-            title: 'Flavors',
-            icon: 'mdi-food-turkey',
-            to: '/flavors',
-          },
-          {
-            id: 2,
-            title: 'Risk Measures',
-            icon: 'mdi-dice-multiple',
-            to: '/risks',
-          },
-          {
-            id: 3,
-            title: 'Portfolio Constraints',
-            icon: 'mdi-handcuffs',
-            to: '/constraints',
-          },
-          {
-            id: 4,
-            title: 'About',
-            icon: 'mdi-information-outline',
-            to: '/about',
-          },
-        ],
-      }
-    },
+    computed: {
+      items: sync('nav_items')
+    }
   }
 </script>
 
