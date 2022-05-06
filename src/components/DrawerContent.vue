@@ -18,11 +18,11 @@
 </template>
 
 <script>
-  import { sync } from 'vuex-pathify'
+  import { get } from 'vuex-pathify'
   export default {
     name: "NavDrawer.vue",
     computed: {
-      items: sync('nav/nav_items')
+      items: get('nav/nav_items')
     }
   }
 </script>
