@@ -22,7 +22,7 @@
   export default {
     name: "NavDrawer.vue",
     computed: {
-      items: sync('nav_items')
+      items: sync('nav/nav_items')
     }
   }
 </script>
