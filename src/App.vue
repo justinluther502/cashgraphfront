@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <!--side nav drawer-->
     <v-navigation-drawer
       v-model="show_drawer"
       app
@@ -10,12 +11,13 @@
       <drawer-content/>
     </v-navigation-drawer>
 
+    <!--top app bar-->
     <v-app-bar app>
       <v-app-bar-nav-icon @click="show_drawer = !show_drawer"/>
-
       <v-toolbar-title>CashGraphs</v-toolbar-title>
     </v-app-bar>
 
+    <!--main content-->
     <v-main>
       <v-container fluid>
         <router-view/>
