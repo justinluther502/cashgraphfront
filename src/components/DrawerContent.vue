@@ -22,10 +22,11 @@
     data() {
       return {
         items: [
-          {title: 'Optimizer Dashboard', icon: 'mdi-view-dashboard'},
+          {title: 'Optimizer Dashboard', icon: 'mdi-chart-line'},
           {title: 'Flavors', icon: 'mdi-food-turkey'},
-          {title: 'Risk Measure', icon: 'mdi-dice-multiple'},
+          {title: 'Risk Measures', icon: 'mdi-dice-multiple'},
           {title: 'Portfolio Constraints', icon: 'mdi-handcuffs'},
+          {title: 'About', icon: 'mdi-information-outline'},
         ],
       }
     },
