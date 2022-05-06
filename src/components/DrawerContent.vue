@@ -2,7 +2,8 @@
   <v-list>
     <v-list-item
       v-for="item in items"
-      :key="item.title"
+      :key="item.id"
+      :to="item.to"
       link
     >
       <v-list-item-icon>
@@ -22,11 +23,36 @@
     data() {
       return {
         items: [
-          {title: 'Optimizer Dashboard', icon: 'mdi-chart-line'},
-          {title: 'Flavors', icon: 'mdi-food-turkey'},
-          {title: 'Risk Measures', icon: 'mdi-dice-multiple'},
-          {title: 'Portfolio Constraints', icon: 'mdi-handcuffs'},
-          {title: 'About', icon: 'mdi-information-outline'},
+          {
+            id: 0,
+            title: 'Optimizer Dashboard',
+            icon: 'mdi-chart-line',
+            to: '/',
+          },
+          {
+            id: 1,
+            title: 'Flavors',
+            icon: 'mdi-food-turkey',
+            to: '/flavors',
+          },
+          {
+            id: 2,
+            title: 'Risk Measures',
+            icon: 'mdi-dice-multiple',
+            to: '/risks',
+          },
+          {
+            id: 3,
+            title: 'Portfolio Constraints',
+            icon: 'mdi-handcuffs',
+            to: '/constraints',
+          },
+          {
+            id: 4,
+            title: 'About',
+            icon: 'mdi-information-outline',
+            to: '/about',
+          },
         ],
       }
     },

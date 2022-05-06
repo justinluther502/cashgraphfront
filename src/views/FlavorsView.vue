@@ -1,24 +1,21 @@
 <template>
   <div>
     <view-header :title="title" :title_prefix="title_prefix" />
-    <frontier-spark/>
   </div>
 </template>
 
 <script>
   import viewHeader from "@/components/ViewHeader"
-  import frontierSpark from "@/components/FrontierSpark"
 
   export default {
-    name: "DashboardView.vue",
+    name: "FlavorsView.vue",
     components: {
       viewHeader,
-      frontierSpark,
     },
     data() {
       return {
-        title: "Dashboard",
-        title_prefix: "Modern Portfolio Theory",
+        title: "Flavors",
+        title_prefix: "Asset Universe Selection",
       }
     }
   }
