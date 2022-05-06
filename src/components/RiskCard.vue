@@ -5,6 +5,8 @@
     elevation="5"
     @click="selectRisk"
   >
+
+    <!--Header and Description-->
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="text-h5 mb-1">
@@ -15,6 +17,7 @@
         </v-list-item-subtitle>
       </v-list-item-content>
 
+      <!--Checkbox Icon-->
       <v-list-item-icon>
         <v-icon
           x-large
@@ -31,13 +34,14 @@
       </v-list-item-icon>
     </v-list-item>
 
+    <!--Pros and Cons Lists-->
     <v-list dense>
       <v-subheader>Pros</v-subheader>
       <v-list-item-group>
         <v-list-item
           v-for="pro in pros"
           :key="pro"
-          inactive
+          disabled
         >
           <v-list-item-content>
             <v-list-item-title v-text="pro"/>
@@ -45,13 +49,12 @@
         </v-list-item>
       </v-list-item-group>
     </v-list>
-
     <v-list dense>
       <v-subheader>Cons</v-subheader>
       <v-list-item
         v-for="con in cons"
         :key="con"
-        inactive
+        disabled
       >
         <v-list-item-content>
           <v-list-item-title v-text="con"/>
@@ -78,9 +81,8 @@
       cons: Array,
     },
     methods: {
-      selectRisk: function () {
+      selectRisk() {
         store.set('mpt_params/selected_risk', this.name)
-        // console.log(this.name)
       },
     },
   }
