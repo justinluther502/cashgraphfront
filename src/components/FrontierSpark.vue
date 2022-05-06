@@ -11,6 +11,7 @@
     :type="type"
     :auto-line-width="autoLineWidth"
     auto-draw
+    height="100%"
   ></v-sparkline>
 </template>
 
@@ -27,12 +28,12 @@
   export default {
     name: "FrontierSpark.vue",
     data: () => ({
-      width: 2,
-      radius: 10,
+      width: 3,
+      radius: 4,
       padding: 8,
       lineCap: 'round',
-      gradient: gradients[5],
-      value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0],
+      gradient: gradients[3],
+      value: [0, 3, 5, 6, 7, 7.5, 8, 8.4, 8.7, 9],
       gradientDirection: 'top',
       gradients,
       fill: false,

@@ -7,23 +7,26 @@
       dark
       bottom
     >
-      <drawer-content />
+      <drawer-content/>
     </v-navigation-drawer>
 
     <v-app-bar app>
-      <v-app-bar-nav-icon @click="show_drawer = !show_drawer" />
+      <v-app-bar-nav-icon @click="show_drawer = !show_drawer"/>
 
       <v-toolbar-title>CashGraphs</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
-      <router-view />
+      <v-container fluid>
+        <router-view/>
+      </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
   import DrawerContent from "@/components/DrawerContent"
+
   export default {
     name: 'App',
     components: {
