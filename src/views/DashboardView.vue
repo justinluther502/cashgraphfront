@@ -4,10 +4,10 @@
 
 <script>
 export default {
-  name: "LandingView.vue",
+  name: "DashboardView.vue",
   data() {
     return {
-      title: "Landing"
+      title: "Dashboard"
     }
   }
 }

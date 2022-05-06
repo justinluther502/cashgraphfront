@@ -1,48 +1,38 @@
 <template>
-  <v-app id="inspire">
-    <top-nav />
-    <v-main class="grey lighten-3">
-      <v-container>
-        <v-row>
-          <v-col
-            cols="12"
-            sm="2"
-          >
-            <left-side />
-          </v-col>
-          <v-col
-            cols="12"
-            sm="8"
-          >
-            <v-sheet
-              min-height="70vh"
-              rounded="lg"
-            >
-              <router-view />
-            </v-sheet>
-          </v-col>
-          <v-col
-            cols="12"
-            sm="2"
-          >
-            <right-side />
-          </v-col>
-        </v-row>
-      </v-container>
+  <v-app>
+    <v-navigation-drawer
+      v-model="show_drawer"
+      app
+      class="deep-purple accent-4"
+      dark
+      bottom
+    >
+      <drawer-content />
+    </v-navigation-drawer>
+
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click="show_drawer = !show_drawer" />
+
+      <v-toolbar-title>CashGraphs</v-toolbar-title>
+    </v-app-bar>
+
+    <v-main>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-  import TopNav from "@/components/TopNav"
-  import LeftSide from "@/components/LeftSide"
-  import RightSide from "@/components/RightSide"
+  import DrawerContent from "@/components/DrawerContent"
   export default {
     name: 'App',
     components: {
-      TopNav,
-      LeftSide,
-      RightSide
+      DrawerContent
+    },
+    data() {
+      return {
+        show_drawer: null,
+      }
     },
   }
 </script>

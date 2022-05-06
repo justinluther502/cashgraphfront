@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import LandingView from "@/views/LandingView"
-import ProfileView from "@/views/ProfileView"
+import DashboardView from "@/views/DashboardView"
 
 Vue.use(VueRouter)
 
@@ -9,13 +8,8 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: LandingView
+    component: DashboardView
   },
-  {
-    path: '/profile',
-    name: 'profile',
-    component: ProfileView
-  }
 ]
 
 const router = new VueRouter({
