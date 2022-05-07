@@ -14,15 +14,19 @@ const state = {
       description2: `We recommend variance as a risk measure for this flavor.
       Semivariance won't add much because all of the marginals are normal.`,
       assets: [
-        'U.S. Stocks',
         'Gold',
         'Emerging Market Corporate Bonds',
         'US BBB Corporate Bonds',
         'Nikkei 225 Stocks',
+        'U.S. Stocks',
         'U.S. High Yield Bonds',
       ],
       marginal_images: [],
       pair_cop_images: [],
+      constraints: {
+        mins: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        maxs: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+      },
     },
     {
       id: 1,
@@ -46,6 +50,10 @@ const state = {
       ],
       marginal_images: [],
       pair_cop_images: [],
+      constraints: {
+        mins: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        maxs: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+      },
     },
   ],
   selected_flavor_id: 0,
