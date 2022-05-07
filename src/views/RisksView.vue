@@ -1,6 +1,5 @@
 <template>
-  <div
-  >
+  <div>
     <view-header :title="title" :title_prefix="title_prefix" />
     <risk-card
       v-for="risk in risks"
