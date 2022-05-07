@@ -47,15 +47,33 @@
 </template>
 
 <script>
+  import { get } from 'vuex-pathify'
+
   export default {
     name: "ViewHeader.vue",
     props: {
       title: String,
       title_prefix: String,
     },
+    computed: {
+      flavors: get('flavors/flavors'),
+      selection: get('flavors/selected_flavor_id'),
+      risk: get('mpt_params/selected_risk'),
+    },
     methods: {
       runOptimizer() {
-        console.log("runOptimizer")
+        const flavor_obj = this.flavors.filter(
+          choice => choice.id == this.selection)[0]
+        const risk = this.risk
+        const mins = flavor_obj.constraints.mins
+        const maxs = flavor_obj.constraints.maxs
+        const payload = {
+          'flavor': flavor_obj.name,
+          'risk': risk,
+          'mins': mins,
+          'maxs': maxs,
+        }
+        console.log(payload)
       },
     },
   }
