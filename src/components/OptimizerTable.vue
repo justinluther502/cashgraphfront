@@ -1,6 +1,5 @@
 <template>
   <v-simple-table dense>
-    <template v-slot:default>
       <thead>
       <tr>
         <th class="text-left">
@@ -13,28 +12,47 @@
       </thead>
       <tbody>
       <tr>
-        <td>Portfolio Flavor</td>
         <td>
-          {{ flavors.filter(choice => choice.id == flavor_id)[0].label }}
+          <v-list-item to="/flavors" class="pa-0">
+            Portfolio Flavor
+          </v-list-item>
+        </td>
+        <td>
+          <v-list-item to="/flavors" class="pa-0">
+            {{ flavors.filter(choice => choice.id == flavor_id)[0].label }}
+          </v-list-item>
         </td>
       </tr>
       <tr>
-        <td>Risk Measure</td>
         <td>
-          {{ risks.filter(measure => measure.name == risk)[0].label }}
+          <v-list-item to="/risks" class="pa-0">Risk Measure
+          </v-list-item>
+        </td>
+        <td>
+          <v-list-item to="/risks" class="pa-0">
+            {{ risks.filter(measure => measure.name == risk)[0].label }}
+          </v-list-item>
         </td>
       </tr>
       <tr>
-        <td>Constraints used?</td>
-        <td>No</td>
+        <td>
+          <v-list-item to="/constraints" class="pa-0">
+            Constraints used?
+          </v-list-item>
+        </td>
+        <td>
+          <v-list-item to="/constraints" class="pa-0">
+            No
+          </v-list-item>
+        </td>
       </tr>
       </tbody>
-    </template>
   </v-simple-table>
 </template>
 
 <script>
-  import { get } from 'vuex-pathify'
+  import {get} from 'vuex-pathify'
+
   export default {
     name: "OptimizerTable.vue",
     computed: {
@@ -42,7 +60,7 @@
       flavors: get('flavors/flavors'),
       risk: get('mpt_params/selected_risk'),
       risks: get('mpt_params/risk_measures'),
-    }
+    },
   }
 </script>
 
