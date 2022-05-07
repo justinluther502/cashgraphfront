@@ -14,8 +14,8 @@
     },
     data() {
       return {
-        title: "Portfolio Constraints",
-        title_prefix: "Weight constraints for the portfolio",
+        title: "Constraints",
+        title_prefix: "Portfolio weight constraints",
       }
     },
   }

@@ -12,7 +12,8 @@
       </v-card-text>
     </v-card>
     <v-btn
-      class="ma-16"
+      v-if="title !== 'Dashboard'"
+      class="mt-16"
       fab
       dark
       x-large

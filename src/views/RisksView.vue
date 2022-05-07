@@ -31,7 +31,7 @@
     data() {
       return {
         title: "Risk Measures",
-        title_prefix: "Measure to use in x-axis of efficient frontier",
+        title_prefix: "Risk measure to minimize",
       }
     }
   }

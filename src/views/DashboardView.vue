@@ -2,7 +2,7 @@
   <div>
     <view-header :title="title" :title_prefix="title_prefix"/>
     <v-btn
-      class="ma-16"
+      class="mt-16"
       fab
       dark
       x-large
@@ -76,7 +76,7 @@
     data() {
       return {
         title: "Dashboard",
-        title_prefix: "Modern Portfolio Theory",
+        title_prefix: "Modern Portfolio Theory Optimizer",
       }
     },
     methods: {
