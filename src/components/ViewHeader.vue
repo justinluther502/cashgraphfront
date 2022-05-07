@@ -64,11 +64,12 @@
       runOptimizer() {
         const flavor_obj = this.flavors.filter(
           choice => choice.id == this.selection)[0]
+        const flav_name = flavor_obj.name
         const risk = this.risk
         const mins = flavor_obj.constraints.mins
         const maxs = flavor_obj.constraints.maxs
         const payload = {
-          'flavor': flavor_obj.name,
+          'flavor': flav_name,
           'risk': risk,
           'mins': mins,
           'maxs': maxs,
