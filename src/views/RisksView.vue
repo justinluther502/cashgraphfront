@@ -1,7 +1,5 @@
 <template>
-  <v-card
-    flat
-    tile
+  <div
   >
     <view-header :title="title" :title_prefix="title_prefix" />
     <risk-card
@@ -14,7 +12,7 @@
       :cons="risk.cons"
     >
     </risk-card>
-  </v-card>
+  </div>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <view-header :title="title" :title_prefix="title_prefix" />
+    <view-header :title="title" :title_prefix="title_prefix"/>
   </div>
 </template>
 
@@ -17,7 +17,7 @@
         title: "Portfolio Constraints",
         title_prefix: "Weight constraints for the portfolio",
       }
-    }
+    },
   }
 </script>
 
