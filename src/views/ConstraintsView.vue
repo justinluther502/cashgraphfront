@@ -2,8 +2,8 @@
   <div>
     <view-header :title="title" :title_prefix="title_prefix"/>
     <v-row>
-      <v-col cols="12" md="4">
-        <v-card class="mb-6">
+      <v-col cols="12" md="6">
+        <v-card class="mb-6" elevation="8">
           <v-card-title>
             Global Constraints
           </v-card-title>
@@ -24,7 +24,7 @@
             </v-row>
           </v-card-text>
         </v-card>
-        <v-card>
+        <v-card elevation="8">
           <v-card-title>
             Constraints
           </v-card-title>

@@ -1,15 +1,13 @@
 <template>
   <v-card
-    class="ma-6"
-    max-width="750"
-    elevation="5"
+    elevation="8"
     @click="selectRisk"
   >
 
     <!--Header and Description-->
     <v-list-item three-line>
       <v-list-item-content>
-        <v-list-item-title class="text-h5 mb-1">
+        <v-list-item-title class="text-h5">
           {{ label }}
         </v-list-item-title>
         <v-list-item-subtitle>

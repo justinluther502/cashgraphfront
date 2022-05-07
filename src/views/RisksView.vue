@@ -1,28 +1,33 @@
 <template>
   <div>
-    <view-header :title="title" :title_prefix="title_prefix" />
-    <risk-card
+    <view-header :title="title" :title_prefix="title_prefix"/>
+    <v-row
       v-for="risk in risks"
       :key="risk.id"
-      :name="risk.name"
-      :label="risk.label"
-      :desc="risk.description"
-      :pros="risk.pros"
-      :cons="risk.cons"
     >
-    </risk-card>
+      <v-col cols="12" md="6">
+        <risk-card
+          :name="risk.name"
+          :label="risk.label"
+          :desc="risk.description"
+          :pros="risk.pros"
+          :cons="risk.cons"
+        >
+        </risk-card>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
   import ViewHeader from "@/components/ViewHeader"
   import RiskCard from "@/components/RiskCard"
-  import { get } from "vuex-pathify"
+  import {get} from "vuex-pathify"
 
   export default {
     name: "RisksView.vue",
     computed: {
-      risks: get('mpt_params/risk_measures')
+      risks: get('mpt_params/risk_measures'),
     },
     components: {
       ViewHeader,
@@ -33,7 +38,7 @@
         title: "Risk Measures",
         title_prefix: "Risk measure to minimize",
       }
-    }
+    },
   }
 </script>
 

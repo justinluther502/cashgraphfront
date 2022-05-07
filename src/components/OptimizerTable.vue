@@ -1,5 +1,6 @@
 <template>
-  <v-simple-table dense>
+  <div>
+    <v-simple-table dense>
       <thead>
       <tr>
         <th class="text-left">
@@ -34,20 +35,38 @@
           </v-list-item>
         </td>
       </tr>
+      </tbody>
+    </v-simple-table>
+    <v-divider class="pb-10"/>
+    <v-simple-table dense>
+      <thead>
       <tr>
+        <th class="text-left">
+          Portfolio Weight Constraints
+        </th>
+        <th>
+          Min
+        </th>
+        <th>
+          Max
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="(asset, idx) in flavors[flavor_id]['assets']" :key="idx">
         <td>
-          <v-list-item to="/constraints" class="pa-0">
-            Constraints used?
-          </v-list-item>
+          {{ flavors[flavor_id]['assets'][idx] }}
         </td>
         <td>
-          <v-list-item to="/constraints" class="pa-0">
-            No
-          </v-list-item>
+          {{ flavors[flavor_id]['constraints']['mins'][idx] }}
+        </td>
+        <td>
+          {{ flavors[flavor_id]['constraints']['maxs'][idx] }}
         </td>
       </tr>
       </tbody>
-  </v-simple-table>
+    </v-simple-table>
+  </div>
 </template>
 
 <script>

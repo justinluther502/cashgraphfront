@@ -12,7 +12,23 @@
       </v-card-text>
     </v-card>
     <v-btn
-      v-if="title !== 'Dashboard'"
+      v-if="title == 'Dashboard'"
+      class="mt-16"
+      fab
+      dark
+      x-large
+      color="purple"
+      absolute
+      top
+      right
+      @click="runOptimizer"
+    >
+      <v-icon dark>
+        mdi-play
+      </v-icon>
+    </v-btn>
+    <v-btn
+      v-else
       class="mt-16"
       fab
       dark
@@ -36,6 +52,11 @@
     props: {
       title: String,
       title_prefix: String,
+    },
+    methods: {
+      runOptimizer() {
+        console.log("runOptimizer")
+      },
     },
   }
 </script>

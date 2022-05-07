@@ -1,26 +1,11 @@
 <template>
   <div>
     <view-header :title="title" :title_prefix="title_prefix"/>
-    <v-btn
-      class="mt-16"
-      fab
-      dark
-      x-large
-      color="purple"
-      absolute
-      top
-      right
-      @click="runOptimizer"
-    >
-      <v-icon dark>
-        mdi-play
-      </v-icon>
-    </v-btn>
     <v-row>
       <v-col cols="12" md="3">
 
         <!--Optimizer Selections Summary-->
-        <v-card class="fill-height">
+        <v-card class="fill-height" elevation="8">
           <v-card-title>
             Optimizer Selections
           </v-card-title>
@@ -30,7 +15,7 @@
       <v-col>
 
         <!--Efficient Frontier Chart Area-->
-        <v-card>
+        <v-card elevation="8" class="fill-height">
           <v-card-title>
             Efficient Frontier
           </v-card-title>
@@ -42,7 +27,7 @@
       <v-col cols="12" md="6">
 
         <!--Efficient Portfolio Weight Table-->
-        <v-card>
+        <v-card elevation="8">
           <v-card-title>
             Portfolio Weights
           </v-card-title>
@@ -51,7 +36,7 @@
       <v-col cols="12" md="6">
 
         <!--Selected Efficient Portfolio Pie Chart-->
-        <v-card>
+        <v-card elevation="8">
           <v-card-title>
             Selected Portfolio Composition
           </v-card-title>
@@ -78,11 +63,6 @@
         title: "Dashboard",
         title_prefix: "Modern Portfolio Theory Optimizer",
       }
-    },
-    methods: {
-      runOptimizer() {
-        console.log("runOptimizer")
-      },
     },
   }
 </script>
