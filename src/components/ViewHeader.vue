@@ -47,7 +47,8 @@
 </template>
 
 <script>
-  import { get } from 'vuex-pathify'
+  import {get} from 'vuex-pathify'
+  import apiCall from "@/utils/api"
 
   export default {
     name: "ViewHeader.vue",
@@ -74,7 +75,15 @@
           'mins': mins,
           'maxs': maxs,
         }
-        console.log(payload)
+        apiCall({url: 'optimize/', data: payload, method: 'POST'})
+          .then(res => {
+              console.log(res)
+            },
+          )
+          .catch(err => {
+              console.log(err)
+            },
+          )
       },
     },
   }
