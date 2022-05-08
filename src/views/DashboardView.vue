@@ -29,8 +29,9 @@
     <v-col cols="12" md="6">
       <v-card elevation="8">
           <v-card-title>
-            Portfolio Weights
+            Portfolio Weights (%)
           </v-card-title>
+          <portfolio-weights />
         </v-card>
       </v-col>
 
@@ -50,6 +51,7 @@
   import ChartFrame from "@/components/ChartFrame"
   import OptimizerTable from "@/components/OptimizerTable"
   import ViewHeader from "@/components/ViewHeader"
+  import PortfolioWeights from "@/components/PortfolioWeights"
 
   export default {
     name: "DashboardView.vue",
@@ -57,6 +59,7 @@
       ChartFrame,
       OptimizerTable,
       ViewHeader,
+      PortfolioWeights
     },
     data() {
       return {
