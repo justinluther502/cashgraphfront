@@ -15,7 +15,7 @@
 
       <!--Efficient Frontier Chart Area-->
       <v-col cols="12" md="9">
-      <v-card elevation="8">
+      <v-card elevation="8" :loading="loading" :key="refresh">
           <v-card-title>
             Efficient Frontier
           </v-card-title>
@@ -27,7 +27,12 @@
     <!--Efficient Portfolio Weight Table-->
     <v-row>
     <v-col cols="12" md="6">
-      <v-card elevation="8">
+      <v-card
+        elevation="8"
+        class="fill-height"
+        :loading="loading"
+        :key="refresh"
+      >
           <v-card-title>
             Portfolio Weights (%)
           </v-card-title>
@@ -37,7 +42,7 @@
 
       <!--Selected Efficient Portfolio Pie Chart-->
       <v-col cols="12" md="6">
-      <v-card elevation="8">
+      <v-card elevation="8" :loading="loading" :key="refresh">
           <v-card-title>
             Selected Portfolio Composition
           </v-card-title>
@@ -55,8 +60,14 @@
   import PortfolioWeights from "@/components/PortfolioWeights"
   import PieFrame from "@/components/PieFrame"
 
+  import { get } from 'vuex-pathify'
+
   export default {
     name: "DashboardView.vue",
+    computed: {
+      loading: get('frontier/api_waiting'),
+      refresh: get('frontier/refresh_key'),
+    },
     components: {
       ChartFrame,
       OptimizerTable,

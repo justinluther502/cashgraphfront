@@ -47,7 +47,8 @@
 </template>
 
 <script>
-  import {get} from 'vuex-pathify'
+  import { get } from 'vuex-pathify'
+  import store from '../store'
   import apiCall from "@/utils/api"
 
   export default {
@@ -63,6 +64,7 @@
     },
     methods: {
       runOptimizer() {
+        store.set('frontier/api_waiting', 'primary')
         const flavor_obj = this.flavors.filter(
           choice => choice.id == this.selection)[0]
         const flav_name = flavor_obj.name
@@ -78,10 +80,19 @@
         apiCall({url: 'optimize/', data: payload, method: 'POST'})
           .then(res => {
               console.log(res)
+              store.set('frontier/asset_risks', res.data['Asset Risks'])
+              store.set('frontier/asset_returns', res.data['Asset Returns'])
+              store.set('frontier/asset_labels', res.data['Asset Labels'])
+              store.set('frontier/portfolio_risks', res.data['Portfolio Risks'])
+              store.set('frontier/portfolio_returns', res.data['Portfolio Returns'])
+              store.set('frontier/portfolio_weights', res.data['Portfolio Weights'])
+              store.set('frontier/api_waiting', null)
+              store.set('frontier/refresh_key', get('frontier/refresh_key') + 1)
             },
           )
           .catch(err => {
               console.log(err)
+              store.set('frontier/api_waiting', null)
             },
           )
       },

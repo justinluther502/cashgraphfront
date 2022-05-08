@@ -1,6 +1,8 @@
 import {make} from 'vuex-pathify'
 
 const state = {
+  refresh_key: 0,
+  api_waiting: null,
   slice: 4,
   asset_risks: [
     0.0433225589410411,
