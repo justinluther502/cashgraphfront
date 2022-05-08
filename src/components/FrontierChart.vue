@@ -26,6 +26,8 @@
     LinearScale,
   } from 'chart.js'
 
+  import ChartDataLabels from 'chartjs-plugin-datalabels'
+
   ChartJS.register(
     Title,
     Tooltip,
@@ -34,6 +36,7 @@
     CategoryScale,
     PointElement,
     LinearScale,
+    ChartDataLabels,
   )
 
   export default {
@@ -69,10 +72,11 @@
       },
       plugins: {
         type: Array,
-        default: () => [],
+        default: () => [ChartDataLabels],
       },
       asset_points: Array,
       port_points: Array,
+      asset_labels: Array,
     },
     data() {
       return {
@@ -80,22 +84,36 @@
           datasets: [
             {
               label: 'Original Assets',
+              labels: this.asset_labels,
               fill: false,
-              borderColor: '#f87979',
-              backgroundColor: '#f87979',
+              borderColor: '#6BCFDC',
+              backgroundColor: '#6BCFDC',
               data: this.asset_points,
             },
             {
               label: 'Optimized Portfolios',
+              labels: null,
               fill: false,
-              borderColor: '#000000',
-              backgroundColor: '#000000',
+              borderColor: '#4C3B55',
+              backgroundColor: '#4C3B55',
               data: this.port_points,
+              datalabels: {
+                display: false,
+              },
             },
           ],
         },
         chartOptions: {
           responsive: true,
+          plugins: {
+            // I don't understand why this works, just copied.
+            datalabels: {
+              formatter: function (value, context) {
+                return context.dataset.labels[context.dataIndex]
+              },
+              align: 'bottom',
+            },
+          },
           maintainAspectRatio: false,
           scales: {
             x: {
