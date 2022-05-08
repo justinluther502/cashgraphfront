@@ -6,11 +6,24 @@
       :asset_labels="asset_labels"
     >
     </frontier-chart>
+    <v-row>
+      <v-col cols="1"></v-col>
+      <v-col>
+        <v-slider
+          min="0"
+          :max="port_risks.length - 1"
+          thumb-label="always"
+          v-model="slice"
+        >
+        </v-slider>
+      </v-col>
+      <v-col cols="1"></v-col>
+    </v-row>
   </span>
 </template>
 
 <script>
-  import {get} from 'vuex-pathify'
+  import { get, sync } from 'vuex-pathify'
   import FrontierChart from "@/components/FrontierChart"
 
   export default {
@@ -23,7 +36,8 @@
       asset_rets: get('frontier/asset_returns'),
       port_risks: get('frontier/portfolio_risks'),
       port_rets: get('frontier/portfolio_returns'),
-      asset_labels: get('frontier/asset_labels')
+      asset_labels: get('frontier/asset_labels'),
+      slice: sync('frontier/slice'),
     },
   }
 </script>

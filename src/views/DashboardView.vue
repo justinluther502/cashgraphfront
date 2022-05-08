@@ -41,6 +41,7 @@
           <v-card-title>
             Selected Portfolio Composition
           </v-card-title>
+          <pie-frame />
         </v-card>
       </v-col>
     </v-row>
@@ -52,6 +53,7 @@
   import OptimizerTable from "@/components/OptimizerTable"
   import ViewHeader from "@/components/ViewHeader"
   import PortfolioWeights from "@/components/PortfolioWeights"
+  import PieFrame from "@/components/PieFrame"
 
   export default {
     name: "DashboardView.vue",
@@ -59,7 +61,8 @@
       ChartFrame,
       OptimizerTable,
       ViewHeader,
-      PortfolioWeights
+      PortfolioWeights,
+      PieFrame,
     },
     data() {
       return {

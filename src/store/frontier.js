@@ -1,6 +1,7 @@
 import {make} from 'vuex-pathify'
 
 const state = {
+  slice: 4,
   asset_risks: [
     0.0433225589410411,
     0.020292463535698812,
