@@ -59,7 +59,7 @@
       },
       height: {
         type: Number,
-        default: 400,
+        default: 325,
       },
       cssClasses: {
         default: '',
