@@ -1,6 +1,6 @@
 <template>
   <v-sparkline
-    :value="value"
+    :value="returns"
     :gradient="gradient"
     :smooth="radius || false"
     :padding="padding"
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+  import { get } from 'vuex-pathify'
   const gradients = [
     ['#222'],
     ['#42b3f4'],
@@ -27,13 +28,15 @@
 
   export default {
     name: "FrontierSpark.vue",
+    computed: {
+      returns: get('frontier.portfolio_returns'),
+    },
     data: () => ({
       width: 3,
       radius: 4,
       padding: 8,
       lineCap: 'round',
       gradient: gradients[3],
-      value: [0, 3, 5, 6, 7, 7.5, 8, 8.4, 8.7, 9],
       gradientDirection: 'top',
       gradients,
       fill: false,
