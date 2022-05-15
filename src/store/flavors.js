@@ -32,12 +32,12 @@ const state = {
       id: 1,
       name: 'fake',
       label: 'Fake Flavor',
-      description1: 'lorem ipsum dolor sit amet consectetur adipisicing elit. ' +
-        'Quisquam, quos.  Lorem ipsum dolor sit amet consectetur adipisicing ' +
-        'elit. Quisquam, quos.',
-      description2: 'lorem ipsum dolor sit amet consectetur adipisicing elit. ' +
-        'Quisquam, quos.  Lorem ipsum dolor sit amet consectetur adipisicing ' +
-        'elit. Quisquam, quos.',
+      description1: 'lorem ipsum dolor sit amet consectetur adipisicing ' +
+        'elit. Quisquam, quos.  Lorem ipsum dolor sit amet consectetur ' +
+        'adipisicing elit. Quisquam, quos.',
+      description2: 'lorem ipsum dolor sit amet consectetur adipisicing ' +
+        'elit. Quisquam, quos.  Lorem ipsum dolor sit amet consectetur ' +
+        'adipisicing elit. Quisquam, quos.',
       assets: [
         'U.S. Stocks',
         'Gold',

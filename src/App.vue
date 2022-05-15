@@ -14,7 +14,7 @@
     <!--top app bar-->
     <v-app-bar app>
       <v-app-bar-nav-icon @click="show_drawer = !show_drawer"/>
-      <v-toolbar-title>CashGraphs</v-toolbar-title>
+      <v-toolbar-title>{{ $webapptitle }}</v-toolbar-title>
     </v-app-bar>
 
     <!--main content-->

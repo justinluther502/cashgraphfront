@@ -14,8 +14,8 @@
     },
     data() {
       return {
-        title: "About CashGraphs",
-        title_prefix: "About CashGraphs",
+        title: "About " + this.$webapptitle,
+        title_prefix: "About " + this.$webapptitle,
       }
     }
   }
