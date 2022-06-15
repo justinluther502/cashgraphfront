@@ -30,29 +30,21 @@ const state = {
     },
     {
       id: 1,
-      name: 'fake',
-      label: 'Fake Flavor',
-      description1: 'lorem ipsum dolor sit amet consectetur adipisicing ' +
-        'elit. Quisquam, quos.  Lorem ipsum dolor sit amet consectetur ' +
-        'adipisicing elit. Quisquam, quos.',
-      description2: 'lorem ipsum dolor sit amet consectetur adipisicing ' +
-        'elit. Quisquam, quos.  Lorem ipsum dolor sit amet consectetur ' +
-        'adipisicing elit. Quisquam, quos.',
+      name: 'two_hy_wilshire',
+      label: 'Two Asset HY and Wilshire',
+      description1: `Simple two asset portfolio, HY stocks and bonds. 80s to 
+      today.`,
+      description2: `We recommend variance as a risk measure for this flavor.
+      Semivariance won't add much because all of the marginals are normal.`,
       assets: [
-        'U.S. Stocks',
-        'Gold',
-        'Emerging Market Corporate Bonds',
-        'US BBB Corporate Bonds',
-        'Nikkei 225 Stocks',
-        'U.S. High Yield Bonds',
-        'fake stuff',
-        'more fake stuff',
+        'HY Bonds',
+        'Wilshire 5000 Stocks'
       ],
       marginal_images: [],
       pair_cop_images: [],
       constraints: {
-        mins: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-        maxs: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+        mins: [0.0, 0.0],
+        maxs: [1.0, 1.0],
       },
     },
   ],

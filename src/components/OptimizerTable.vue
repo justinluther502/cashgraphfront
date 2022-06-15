@@ -20,7 +20,7 @@
         </td>
         <td>
           <v-list-item to="/flavors" class="pa-0">
-            {{ flavors.filter(choice => choice.id == flavor_id)[0].label }}
+            {{ flavors.filter(choice => choice.id === flavor_id)[0].label }}
           </v-list-item>
         </td>
       </tr>
@@ -31,7 +31,7 @@
         </td>
         <td>
           <v-list-item to="/risks" class="pa-0">
-            {{ risks.filter(measure => measure.name == risk)[0].label }}
+            {{ risks.filter(measure => measure.name === risk)[0].label }}
           </v-list-item>
         </td>
       </tr>
