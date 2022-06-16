@@ -5,7 +5,7 @@
 
       <!--Optimizer Selections Summary-->
       <v-col cols="12" md="3">
-      <v-card elevation="8" class="fill-height">
+        <v-card elevation="8" class="fill-height">
           <v-card-title>
             Optimizer Selections
           </v-card-title>
@@ -15,38 +15,38 @@
 
       <!--Efficient Frontier Chart Area-->
       <v-col cols="12" md="9">
-      <v-card elevation="8" :loading="loading" :key="refresh">
+        <v-card elevation="8" :loading="loading" :key="refresh">
           <v-card-title>
             Efficient Frontier
           </v-card-title>
-          <chart-frame />
+          <chart-frame/>
         </v-card>
       </v-col>
     </v-row>
 
     <!--Efficient Portfolio Weight Table-->
     <v-row>
-    <v-col cols="12" md="6">
-      <v-card
-        elevation="8"
-        class="fill-height"
-        :loading="loading"
-        :key="refresh"
-      >
+      <v-col cols="12" md="6">
+        <v-card
+          elevation="8"
+          class="fill-height"
+          :loading="loading"
+          :key="refresh"
+        >
           <v-card-title>
             Portfolio Weights (%)
           </v-card-title>
-          <portfolio-weights />
+          <portfolio-weights/>
         </v-card>
       </v-col>
 
       <!--Selected Efficient Portfolio Pie Chart-->
       <v-col cols="12" md="6">
-      <v-card elevation="8" :loading="loading" :key="refresh">
+        <v-card elevation="8" :loading="loading" :key="refresh">
           <v-card-title>
             Selected Portfolio Composition
           </v-card-title>
-          <pie-frame />
+          <pie-frame/>
         </v-card>
       </v-col>
     </v-row>
@@ -54,34 +54,34 @@
 </template>
 
 <script>
-  import ChartFrame from "@/components/ChartFrame"
-  import OptimizerTable from "@/components/OptimizerTable"
-  import ViewHeader from "@/components/ViewHeader"
-  import PortfolioWeights from "@/components/PortfolioWeights"
-  import PieFrame from "@/components/PieFrame"
+import ChartFrame from "@/components/ChartFrame"
+import OptimizerTable from "@/components/OptimizerTable"
+import ViewHeader from "@/components/ViewHeader"
+import PortfolioWeights from "@/components/PortfolioWeights"
+import PieFrame from "@/components/PieFrame"
 
-  import { get } from 'vuex-pathify'
+import {get} from 'vuex-pathify'
 
-  export default {
-    name: "DashboardView.vue",
-    computed: {
-      loading: get('frontier/api_waiting'),
-      refresh: get('frontier/refresh_key'),
-    },
-    components: {
-      ChartFrame,
-      OptimizerTable,
-      ViewHeader,
-      PortfolioWeights,
-      PieFrame,
-    },
-    data() {
-      return {
-        title: "Dashboard",
-        title_prefix: "Modern Portfolio Theory Optimizer",
-      }
-    },
-  }
+export default {
+  name: "DashboardView.vue",
+  computed: {
+    loading: get('frontier/api_waiting'),
+    refresh: get('frontier/refresh_key'),
+  },
+  components: {
+    ChartFrame,
+    OptimizerTable,
+    ViewHeader,
+    PortfolioWeights,
+    PieFrame,
+  },
+  data() {
+    return {
+      title: "Dashboard",
+      title_prefix: "Modern Portfolio Theory Optimizer",
+    }
+  },
+}
 </script>
 
 <style scoped>

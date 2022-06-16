@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import {get} from 'vuex-pathify'
+import {get, sync} from 'vuex-pathify'
 import store from '../store'
 import apiCall from "@/utils/api"
 
@@ -61,10 +61,13 @@ export default {
     flavors: get('flavors/flavors'),
     selection: get('flavors/selected_flavor_id'),
     risk: get('mpt_params/selected_risk'),
+
+    refresh_key: sync('frontier/refresh_key'),
+    waiting: sync('frontier/api_waiting')
   },
   methods: {
     runOptimizer() {
-      store.set('frontier/api_waiting', 'primary')
+      this.waiting = 'primary'
       const flavor_obj = this.flavors.filter(
         choice => choice.id == this.selection)[0]
       const flav_name = flavor_obj.name
@@ -85,16 +88,13 @@ export default {
             store.set('frontier/portfolio_risks', res.data['Portfolio Risks'])
             store.set('frontier/portfolio_returns', res.data['Portfolio Returns'])
             store.set('frontier/portfolio_weights', res.data['Portfolio Weights'])
-            store.set('frontier/api_waiting', null)
-            //  TODO refresh key isn't working and is setting the store value to
-            //  a big function instead of an integer. Check with Vuex in
-            //  chrome dev tools.
-            store.set('frontier/refresh_key', get('frontier/refresh_key') + 1)
+            this.waiting = null
+            this.refresh_key++
           },
         )
         .catch(err => {
             console.log(err)
-            store.set('frontier/api_waiting', null)
+            this.waiting = null
           },
         )
     },
