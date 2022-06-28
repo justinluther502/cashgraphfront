@@ -52,7 +52,8 @@ const state = {
       name: 'twelve_measure',
       label: 'Twelve Assets',
       description1: `Twelve Asset portfolio inspired by Measure of a Plan 
-      site.`,
+      site. Note that the asset selection is not ideal because there is some
+      overlap. For example, HY US Bonds is a subset of All US Bonds.`,
       description2: `We recommend variance as a risk measure for this flavor.
       Semivariance won't add much because all of the marginals are normal.`,
       assets: [
