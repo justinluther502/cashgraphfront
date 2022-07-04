@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy-s3": "aws --profile justinluther sync ./dist s3://cashgraphs-frontend --delete"
+    "deploy-s3": "aws s3 sync ./dist s3://cgfrontbucket"
   },
   "dependencies": {
     "axios": "^0.27.2",
