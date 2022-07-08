@@ -15,6 +15,36 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="show_drawer = !show_drawer"/>
       <v-toolbar-title>{{ $webapptitle }}</v-toolbar-title>
+      <v-fab-transition>
+        <v-btn
+          v-if="$route.name==='home'"
+          color="purple"
+          fab
+          x-large
+          dark
+          absolute
+          bottom
+          right
+          id="1"
+          @click.stop="runOptimizer"
+        >
+          <v-icon>mdi-play</v-icon>
+        </v-btn>
+        <v-btn
+          v-else
+          color="purple"
+          fab
+          x-large
+          dark
+          absolute
+          bottom
+          right
+          id="2"
+          @click.stop="backHome"
+        >
+          <v-icon dark>mdi-keyboard-return</v-icon>
+        </v-btn>
+      </v-fab-transition>
     </v-app-bar>
 
     <!--main content-->
@@ -27,17 +57,65 @@
 </template>
 
 <script>
-  import DrawerContent from "@/components/DrawerContent"
+import DrawerContent from "@/components/DrawerContent"
+import {get, sync} from "vuex-pathify"
+import apiCall from "@/utils/api"
+import store from "@/store"
 
-  export default {
-    name: 'App',
-    components: {
-      DrawerContent
+export default {
+  name: 'App',
+  components: {
+    DrawerContent
+  },
+  computed: {
+    flavors: get('flavors/flavors'),
+    selection: get('flavors/selected_flavor_id'),
+    risk: get('mpt_params/selected_risk'),
+
+    refresh_key: sync('frontier/refresh_key'),
+    waiting: sync('frontier/api_waiting')
+  },
+  methods: {
+    backHome() {
+      this.$router.push('/')
     },
-    data() {
-      return {
-        show_drawer: null,
+    runOptimizer() {
+      this.waiting = 'primary'
+      const flavor_obj = this.flavors.filter(
+        choice => choice.id == this.selection)[0]
+      const flav_name = flavor_obj.name
+      const risk = this.risk
+      const mins = flavor_obj.constraints.mins
+      const maxs = flavor_obj.constraints.maxs
+      const payload = {
+        'flavor': flav_name,
+        'risk': risk,
+        'mins': mins,
+        'maxs': maxs,
       }
+      apiCall({url: 'optimize/', data: payload, method: 'POST'})
+        .then(res => {
+            store.set('frontier/asset_risks', res.data['Asset Risks'])
+            store.set('frontier/asset_returns', res.data['Asset Returns'])
+            store.set('frontier/asset_labels', res.data['Asset Labels'])
+            store.set('frontier/portfolio_risks', res.data['Portfolio Risks'])
+            store.set('frontier/portfolio_returns', res.data['Portfolio Returns'])
+            store.set('frontier/portfolio_weights', res.data['Portfolio Weights'])
+            this.waiting = null
+            this.refresh_key++
+          },
+        )
+        .catch(err => {
+            console.log(err)
+            this.waiting = null
+          },
+        )
     },
-  }
+  },
+  data() {
+    return {
+      show_drawer: null,
+    }
+  },
+}
 </script>
