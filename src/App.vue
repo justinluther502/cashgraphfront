@@ -33,7 +33,13 @@
           id="1"
           @click.stop="runOptimizer"
         >
-          <v-icon>mdi-play</v-icon>
+          <v-progress-circular
+            v-if="waiting"
+            indeterminate
+            color="white"
+          >
+          </v-progress-circular>
+          <v-icon v-else>mdi-play</v-icon>
         </v-btn>
         <v-btn
           v-else
