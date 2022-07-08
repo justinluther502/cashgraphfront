@@ -1,9 +1,9 @@
 import {make} from 'vuex-pathify'
 
 const state = {
-  refresh_key: 0,
-  api_waiting: null,
-  slice: 4,
+  refresh_key: 0, // forces re-render of frontier chart with fresh API resp.
+  api_waiting: null, // visual indicator that we're waiting on API resp.
+  slice: 4, // choice of portfolio to render in pie chart. higher = riskier.
   asset_risks: [
     0.0433225589410411,
     0.020292463535698812,

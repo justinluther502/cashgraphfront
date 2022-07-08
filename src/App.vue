@@ -19,6 +19,7 @@
         <v-btn
           v-if="$route.name==='home'"
           color="purple"
+          class="accent-3"
           fab
           x-large
           dark
@@ -33,6 +34,7 @@
         <v-btn
           v-else
           color="purple"
+          class="accent-3"
           fab
           x-large
           dark
