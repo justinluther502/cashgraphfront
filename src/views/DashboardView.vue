@@ -4,8 +4,11 @@
     <v-row>
 
       <!--Optimizer Selections Summary-->
-      <v-col cols="12" md="3">
-        <v-card elevation="8" class="fill-height">
+      <v-col cols="12" md="4">
+        <v-card
+          elevation="8"
+          class="fill-height"
+        >
           <v-card-title>
             Optimizer Selections
           </v-card-title>
@@ -14,8 +17,13 @@
       </v-col>
 
       <!--Efficient Frontier Chart Area-->
-      <v-col cols="12" md="9">
-        <v-card elevation="8" :loading="loading" :key="refresh">
+      <v-col cols="12" md="8">
+        <v-card
+          elevation="8"
+          class="fill-height"
+          :loading="loading"
+          :key="refresh"
+        >
           <v-card-title>
             Efficient Frontier
           </v-card-title>

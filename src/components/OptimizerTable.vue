@@ -2,11 +2,11 @@
   <div>
     <v-simple-table dense>
       <thead>
-      <tr>
-        <th class="text-left">
+      <tr class="pa-0">
+        <th>
           Setting
         </th>
-        <th class="text-left">
+        <th>
           Current Selection
         </th>
       </tr>
@@ -37,14 +37,16 @@
       </tr>
       </tbody>
     </v-simple-table>
-    <v-divider class="pb-10"/>
-    <v-list-item to="/constraints" class="pa-0">
-      <v-simple-table dense>
-        <thead>
-        <tr>
-          <th class="text-left">
-            Portfolio Weight Constraints
-          </th>
+    <v-divider class="pb-2"/>
+    <v-card-title>Portfolio Weight Constraints</v-card-title>
+    <router-link
+      style="text-decoration: none; color: inherit;"
+      to="/constraints"
+    >
+      <v-simple-table dense class="pa-0">
+        <thead class="pa-0">
+        <tr class="pa-0">
+          <th/>
           <th>
             Min
           </th>
@@ -54,7 +56,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(asset, idx) in flavors[flavor_id]['assets']" :key="idx">
+        <tr
+          v-for="(asset, idx) in flavors[flavor_id]['assets']"
+          :key="idx"
+          class="pa-0"
+        >
           <td>
             {{ flavors[flavor_id]['assets'][idx] }}
           </td>
@@ -67,22 +73,22 @@
         </tr>
         </tbody>
       </v-simple-table>
-    </v-list-item>
+    </router-link>
   </div>
 </template>
 
 <script>
-  import {get} from 'vuex-pathify'
+import {get} from 'vuex-pathify'
 
-  export default {
-    name: "OptimizerTable.vue",
-    computed: {
-      flavor_id: get('flavors/selected_flavor_id'),
-      flavors: get('flavors/flavors'),
-      risk: get('mpt_params/selected_risk'),
-      risks: get('mpt_params/risk_measures'),
-    },
-  }
+export default {
+  name: "OptimizerTable.vue",
+  computed: {
+    flavor_id: get('flavors/selected_flavor_id'),
+    flavors: get('flavors/flavors'),
+    risk: get('mpt_params/selected_risk'),
+    risks: get('mpt_params/risk_measures'),
+  },
+}
 </script>
 
 <style scoped>
