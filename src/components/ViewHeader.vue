@@ -5,8 +5,12 @@
       elevation="0"
     >
       <v-card-text>
-        <div>{{ title_prefix }}</div>
-        <p class="text-h4 text--primary">
+        <p
+          class="mb-0 mt-0 text-subtitle-1"
+        >
+          {{ title_prefix }}
+        </p>
+        <p class="mb-0 text-h4 text--primary">
           {{ title }}
         </p>
       </v-card-text>

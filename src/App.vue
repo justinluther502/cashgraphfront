@@ -14,7 +14,11 @@
     <!--top app bar-->
     <v-app-bar app>
       <v-app-bar-nav-icon @click="show_drawer = !show_drawer"/>
-      <v-toolbar-title>{{ $webapptitle }}</v-toolbar-title>
+      <v-toolbar-title
+        class="font-weight-black text-h4"
+      >
+        {{ $webapptitle }}
+      </v-toolbar-title>
       <v-fab-transition>
         <v-btn
           v-if="$route.name==='home'"

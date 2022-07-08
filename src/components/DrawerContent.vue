@@ -7,10 +7,17 @@
       link
     >
       <v-list-item-icon>
-        <v-icon>{{ item.icon }}</v-icon>
+        <v-icon
+          x-large
+          color="pink lighten-5"
+        >
+          {{ item.icon }}
+        </v-icon>
       </v-list-item-icon>
       <v-list-item-content>
-        <v-list-item-title>{{ item.title }}</v-list-item-title>
+        <v-list-item-title
+          class="pink--text text--lighten-5 font-weight-medium"
+        >{{ item.title }}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
   </v-list>
