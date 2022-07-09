@@ -1,6 +1,7 @@
 import {make} from 'vuex-pathify'
 
 const state = {
+  show_drawer: null,
   nav_items: [
     {
       id: 0,
