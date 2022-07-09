@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="optimizer-frame">
     <v-simple-table dense>
       <thead>
       <tr class="pa-0">
@@ -74,11 +74,22 @@
         </tbody>
       </v-simple-table>
     </router-link>
+    <v-overlay
+      absolute="true"
+      :value="train_selections"
+    >
+      <v-btn
+        color="success"
+        @click="doneTrainSelections"
+      >
+        Hide Overlay
+      </v-btn>
+    </v-overlay>
   </div>
 </template>
 
 <script>
-import {get} from 'vuex-pathify'
+import {get, sync} from 'vuex-pathify'
 
 export default {
   name: "OptimizerTable.vue",
@@ -87,7 +98,16 @@ export default {
     flavors: get('flavors/flavors'),
     risk: get('mpt_params/selected_risk'),
     risks: get('mpt_params/risk_measures'),
+    train_selections: sync('user/train_selections'),
+    train_pie: sync('user/train_pie'),
   },
+  methods: {
+    doneTrainSelections() {
+      this.train_selections = false
+      this.train_pie = true
+      this.$vuetify.goTo('#piechart-frame')
+    }
+  }
 }
 </script>
 

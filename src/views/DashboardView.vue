@@ -58,15 +58,19 @@
         </v-card>
       </v-col>
     </v-row>
+
+    <!--Popup intro for new users based on local storage flag-->
+    <new-user-dialog v-if="new_user"/>
   </div>
 </template>
 
 <script>
 import ChartFrame from "@/components/ChartFrame"
+import NewUserDialog from "@/components/NewUserDialog"
 import OptimizerTable from "@/components/OptimizerTable"
-import ViewHeader from "@/components/ViewHeader"
 import PortfolioWeights from "@/components/PortfolioWeights"
 import PieFrame from "@/components/PieFrame"
+import ViewHeader from "@/components/ViewHeader"
 
 import {get} from 'vuex-pathify'
 
@@ -75,13 +79,15 @@ export default {
   computed: {
     loading: get('frontier/api_waiting'),
     refresh: get('frontier/refresh_key'),
+    new_user: get('user/new_user'),
   },
   components: {
     ChartFrame,
+    NewUserDialog,
     OptimizerTable,
-    ViewHeader,
     PortfolioWeights,
     PieFrame,
+    ViewHeader,
   },
   data() {
     return {
