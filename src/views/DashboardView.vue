@@ -19,6 +19,7 @@
       <!--Efficient Frontier Chart Area-->
       <v-col cols="12" md="8">
         <v-card
+          id="frontier-frame"
           elevation="8"
           class="fill-height"
           :loading="loading"

@@ -19,6 +19,17 @@
       >
         {{ $webapptitle }}
       </v-toolbar-title>
+      <v-snackbar
+        app
+        timeout="5000"
+        :value="train_button"
+        color="blue"
+        right
+        rounded="pill"
+        top
+      >
+        Press this play button to run the optimizer when you're ready
+      </v-snackbar>
       <v-fab-transition>
         <v-btn
           v-if="$route.name==='home'"
@@ -83,7 +94,7 @@ export default {
     flavors: get('flavors/flavors'),
     selection: get('flavors/selected_flavor_id'),
     risk: get('mpt_params/selected_risk'),
-
+    train_button: sync('user/train_button'),
     refresh_key: sync('frontier/refresh_key'),
     waiting: sync('frontier/api_waiting')
   },

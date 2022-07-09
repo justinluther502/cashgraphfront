@@ -74,16 +74,33 @@
         </tbody>
       </v-simple-table>
     </router-link>
+
     <v-overlay
       absolute="true"
       :value="train_selections"
     >
-      <v-btn
-        color="success"
-        @click="doneTrainSelections"
+      <v-card
+        color="white"
       >
-        Hide Overlay
-      </v-btn>
+        <v-card-title class="purple--text">Optimizer Inputs</v-card-title>
+        <v-card-text class="black--text">
+          Before you run the optimizer, tell us what kind of optimization you
+          want to run. What sorts of securities do you want to include in the
+          optimization? Set your optimization flavor here. Do you have any
+          investment constraints? Set minimum and maximum investments for each
+          portfolio security. What kind of risk do you want to minimize? Set
+          the risk metric to variance, semi-variance, etc.
+        </v-card-text>
+        <v-card-actions>
+          <v-btn
+            color="deep-purple darken-4"
+            @click="doneTrainSelections"
+            text
+          >
+            OK, got it
+          </v-btn>
+        </v-card-actions>
+      </v-card>
     </v-overlay>
   </div>
 </template>
@@ -98,14 +115,15 @@ export default {
     flavors: get('flavors/flavors'),
     risk: get('mpt_params/selected_risk'),
     risks: get('mpt_params/risk_measures'),
-    train_selections: sync('user/train_selections'),
+    train_frontier: sync('user/train_frontier'),
     train_pie: sync('user/train_pie'),
+    train_selections: sync('user/train_selections'),
   },
   methods: {
     doneTrainSelections() {
       this.train_selections = false
-      this.train_pie = true
-      this.$vuetify.goTo('#piechart-frame')
+      this.train_frontier = true
+      this.$vuetify.goTo('#frontier-frame')
     }
   }
 }

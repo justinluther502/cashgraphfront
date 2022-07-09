@@ -36,7 +36,7 @@
       <v-card-actions>
         <v-spacer/>
         <v-btn
-          color="green darken-1"
+          color="deep-purple"
           text
           @click.stop="logFirstVisit"
         >
