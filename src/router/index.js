@@ -39,8 +39,12 @@ const routes = [
 const router = new VueRouter({
   routes,
   // eslint-disable-next-line
-  scrollBehavior (to, from, savedPosition) {
-    return {top: 0, left: 0}
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return {top: 0, left: 0}
+    }
   },
 })
 
