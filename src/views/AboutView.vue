@@ -60,7 +60,7 @@ export default {
   },
   data() {
     return {
-      title: "About " + this.$webapptitle,
+      title: "About " + process.env.VUE_APP_TITLE,
       title_prefix: "So what exactly is going on under the hood?",
     }
   },

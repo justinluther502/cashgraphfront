@@ -5,12 +5,12 @@
   >
     <v-card>
       <v-card-title class="text-h5">
-        Welcome to {{ $webapptitle }}!
+        Welcome to {{ app_title }}!
       </v-card-title>
       <v-card-text>
         <p>
-          {{ $webapptitle }} is a tool for portfolio managers to develop
-          optimized portfolios. {{ $webapptitle }} is grounded in
+          {{ app_title }} is a tool for portfolio managers to develop
+          optimized portfolios. {{ app_title }} is grounded in
           <a
             href="https://en.wikipedia.org/wiki/Modern_portfolio_theory"
             target="_blank">modern portfolio theory</a> and is designed to
@@ -27,7 +27,7 @@
           <li>Optimize against risk metrics other than variance</li>
         </ul>
         <p class="pt-4">
-          {{ $webapptitle }} can do all these things! And it's fast, so you
+          {{ app_title }} can do all these things! And it's fast, so you
           can prototype out portfolios rapidly without waiting for long
           batch computations. Typically a custom efficient frontier can be
           solved in under thirty seconds.
@@ -60,6 +60,11 @@ export default {
     logFirstVisit() {
       this.new_user = false
       this.train_selections = true
+    }
+  },
+  data() {
+    return {
+      app_title: process.env.VUE_APP_TITLE,
     }
   }
 }

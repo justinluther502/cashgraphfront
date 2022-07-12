@@ -4,11 +4,11 @@
     <v-toolbar-title
       class="font-weight-black text-h4"
     >
-      {{ $webapptitle }}
+      {{ app_title }}
     </v-toolbar-title>
     <v-snackbar
       app
-      timeout="5000"
+      timeout="4000"
       :value="train_button"
       color="blue"
       right
@@ -73,6 +73,11 @@ export default {
     refresh_key: sync('frontier/refresh_key'),
     waiting: sync('frontier/api_waiting'),
     show_drawer: sync('nav/show_drawer'),
+  },
+  data() {
+    return {
+      app_title: process.env.VUE_APP_TITLE,
+    }
   },
   methods: {
     backHome() {
