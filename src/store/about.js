@@ -5,7 +5,7 @@ const state = {
     {
       id: 0,
       header: "Modern Portfolio Theory",
-      image_src: "smartphone-1184883_1280.png",
+      image_src: "analytics-3268935__340.png",
       paragraphs: [
         `Lorem ipsum dolor sit amet, eirmod timeam legimus qui ex. Tamquam 
         vocibus ea eum, mea laudem omnesque menandri cu. Eu vel consetetur 
@@ -26,7 +26,7 @@ const state = {
     {
       id: 1,
       header: "Non-Normal Distributions",
-      image_src: "smartphone-1184883_1280.png",
+      image_src: "bayesian-2889576_1280.png",
       paragraphs: [
         `Lorem ipsum dolor sit amet, eirmod timeam legimus qui ex. Tamquam 
         vocibus ea eum, mea laudem omnesque menandri cu. Eu vel consetetur 
@@ -47,7 +47,7 @@ const state = {
     {
       id: 2,
       header: "Vine Copulas",
-      image_src: "smartphone-1184883_1280.png",
+      image_src: "branch-307129_1280.png",
       paragraphs: [
         `Lorem ipsum dolor sit amet, eirmod timeam legimus qui ex. Tamquam 
         vocibus ea eum, mea laudem omnesque menandri cu. Eu vel consetetur 
@@ -68,7 +68,7 @@ const state = {
     {
       id: 3,
       header: "Tail Dependencies",
-      image_src: "smartphone-1184883_1280.png",
+      image_src: "pink-307853_1280.png",
       paragraphs: [
         `Lorem ipsum dolor sit amet, eirmod timeam legimus qui ex. Tamquam 
         vocibus ea eum, mea laudem omnesque menandri cu. Eu vel consetetur 
