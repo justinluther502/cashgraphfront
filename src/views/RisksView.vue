@@ -35,7 +35,7 @@
     },
     data() {
       return {
-        title: "Risk Measures",
+        title: "Risk Metric",
         title_prefix: "Risk measure to minimize",
       }
     },

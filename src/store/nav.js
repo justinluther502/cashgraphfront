@@ -6,7 +6,7 @@ const state = {
     {
       id: 0,
       title: 'Optimizer Dashboard',
-      icon: 'mdi-chart-line',
+      icon: 'mdi-chart-bell-curve-cumulative',
       to: '/',
     },
     {
@@ -18,7 +18,7 @@ const state = {
     {
       id: 2,
       title: 'Risk Measures',
-      icon: 'mdi-dice-multiple',
+      icon: 'mdi-slot-machine-outline',
       to: '/risks',
     },
     {
@@ -29,8 +29,8 @@ const state = {
     },
     {
       id: 4,
-      title: 'About',
-      icon: 'mdi-information-outline',
+      title: 'Under the Hood',
+      icon: 'mdi-engine-outline',
       to: '/about',
     },
   ],

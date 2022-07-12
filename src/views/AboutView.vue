@@ -11,7 +11,7 @@
             max-height="300"
           />
         </v-col>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="6" class="px-8">
           <h2>{{ section.header }}</h2>
           <p v-for="paragraph in section.paragraphs" :key="paragraph">
             {{ paragraph }}
@@ -60,8 +60,8 @@ export default {
   },
   data() {
     return {
-      title: "So what exactly is going on under the hood?",
-      title_prefix: "About " + this.$webapptitle,
+      title: "About " + this.$webapptitle,
+      title_prefix: "So what exactly is going on under the hood?",
     }
   },
 }
