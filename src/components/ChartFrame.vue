@@ -20,7 +20,7 @@
       <v-col cols="1"></v-col>
     </v-row>
     <v-overlay
-      absolute="true"
+      absolute
       :value="train_frontier"
     >
       <v-card

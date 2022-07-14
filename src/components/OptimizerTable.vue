@@ -76,7 +76,7 @@
     </router-link>
 
     <v-overlay
-      absolute="true"
+      absolute
       :value="train_selections"
     >
       <v-card

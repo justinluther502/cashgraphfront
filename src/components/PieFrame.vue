@@ -7,7 +7,7 @@
     >
     </port-pie-chart>
     <v-overlay
-      absolute="true"
+      absolute
       :value="train_pie"
     >
           <v-card
