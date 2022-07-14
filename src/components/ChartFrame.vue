@@ -7,17 +7,14 @@
     >
     </frontier-chart>
     <v-row>
-      <v-col cols="1"></v-col>
-      <v-col>
-        <v-slider
-          min="0"
-          :max="port_risks.length - 1"
-          thumb-label="always"
-          v-model="slice"
-        >
-        </v-slider>
-      </v-col>
-      <v-col cols="1"></v-col>
+      <v-slider
+        class="ps-16 pe-6 pt-10"
+        min="0"
+        :max="port_risks.length - 1"
+        thumb-label="always"
+        v-model="slice"
+      >
+      </v-slider>
     </v-row>
     <v-overlay
       absolute
@@ -49,32 +46,32 @@
 </template>
 
 <script>
-  import { get, sync } from 'vuex-pathify'
-  import FrontierChart from "@/components/FrontierChart"
+import {get, sync} from 'vuex-pathify'
+import FrontierChart from "@/components/FrontierChart"
 
-  export default {
-    name: "ChartFrame.vue",
-    components: {
-      FrontierChart,
-    },
-    computed: {
-      asset_risks: get('frontier/asset_risks'),
-      asset_rets: get('frontier/asset_returns'),
-      port_risks: get('frontier/portfolio_risks'),
-      port_rets: get('frontier/portfolio_returns'),
-      asset_labels: get('frontier/asset_labels'),
-      train_frontier: sync('user/train_frontier'),
-      train_pie: sync('user/train_pie'),
-      slice: sync('frontier/slice'),
-    },
-    methods: {
-      doneTrainFrontier() {
-        this.train_frontier = false
-        this.train_pie = true
-        this.$vuetify.goTo('#piechart-frame')
-      }
+export default {
+  name: "ChartFrame.vue",
+  components: {
+    FrontierChart,
+  },
+  computed: {
+    asset_risks: get('frontier/asset_risks'),
+    asset_rets: get('frontier/asset_returns'),
+    port_risks: get('frontier/portfolio_risks'),
+    port_rets: get('frontier/portfolio_returns'),
+    asset_labels: get('frontier/asset_labels'),
+    train_frontier: sync('user/train_frontier'),
+    train_pie: sync('user/train_pie'),
+    slice: sync('frontier/slice'),
+  },
+  methods: {
+    doneTrainFrontier() {
+      this.train_frontier = false
+      this.train_pie = true
+      this.$vuetify.goTo('#piechart-frame')
     }
   }
+}
 </script>
 
 <style scoped>

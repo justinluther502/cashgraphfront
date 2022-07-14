@@ -120,14 +120,28 @@
               title: {
                 display: true,
                 text: 'Risks',
+                font: {
+                  size: 18,
+                }
               },
+              ticks: {
+                font: {
+                  size: 14,
+                }
+              }
             },
             y: {
               title: {
                 display: true,
                 text: 'Returns',
+                font: {
+                  size: 18,
+                }
               },
               ticks: {
+                font: {
+                  size: 14,
+                },
                 // Display y axis labels as percentage returns
                 callback: function(value) {
                   return (value*100).toFixed(2) + "%"

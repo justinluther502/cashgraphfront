@@ -31,20 +31,17 @@ const state = {
       header: "Non-Normal Distributions",
       image_src: "bayesian-2889576_1280.png",
       paragraphs: [
-        `Lorem ipsum dolor sit amet, eirmod timeam legimus qui ex. Tamquam 
-        vocibus ea eum, mea laudem omnesque menandri cu. Eu vel consetetur 
-        dissentiunt, mei decore principes at, tollit graece ad mei. In epicurei 
-        comprehensam nam, vim ne lorem nostrud expetenda. Habeo vulputate 
-        vituperatoribus cu vim.`,
-        `Percipitur reformidans eam ne. Id sit etiam appareat, cum no dolore 
-        dignissim. Te appellantur mediocritatem ius, ius putent similique 
-        concludaturque cu. An cum purto duis, ius alia error dictas eu, ut sit 
-        solum falli. Mel dicam ancillae constituam ea, an eos hinc fabulas, vis 
-        primis invidunt ei.`,
-        `Inermis maluisset no pri. Integre persequeris quo ea, ut convenire 
-        maluisset interpretaris mea. Recteque convenire repudiandae id vis. Cu 
-        illum labitur vis, no nam case option. Te purto vivendo quaerendum 
-        per.`,
+        `Historically, MPT implementations have restricted themselves to using 
+        gaussian shapes for all asset return distributions. Normal 
+        distributions are easier to work with, primarily because a joint 
+        return distribution can be specified with only a few inputs. Namely, 
+        the expected average return and variance for each asset, and the full
+        pairwise correlation matrix.`,
+        process.env.VUE_APP_TITLE +
+        ` doesn't have this limitation. We can build custom joint expected 
+        return distributions using a wide array of distribution functions. In 
+        fact, nearly any distribution specified in the R statistical 
+        programming language can be used for a custom asset universe flavor.`,
       ]
     },
     {
@@ -52,20 +49,17 @@ const state = {
       header: "Vine Copulas",
       image_src: "branch-307129_1280.png",
       paragraphs: [
-        `Lorem ipsum dolor sit amet, eirmod timeam legimus qui ex. Tamquam 
-        vocibus ea eum, mea laudem omnesque menandri cu. Eu vel consetetur 
-        dissentiunt, mei decore principes at, tollit graece ad mei. In epicurei 
-        comprehensam nam, vim ne lorem nostrud expetenda. Habeo vulputate 
-        vituperatoribus cu vim.`,
-        `Percipitur reformidans eam ne. Id sit etiam appareat, cum no dolore 
-        dignissim. Te appellantur mediocritatem ius, ius putent similique 
-        concludaturque cu. An cum purto duis, ius alia error dictas eu, ut sit 
-        solum falli. Mel dicam ancillae constituam ea, an eos hinc fabulas, vis 
-        primis invidunt ei.`,
-        `Inermis maluisset no pri. Integre persequeris quo ea, ut convenire 
-        maluisset interpretaris mea. Recteque convenire repudiandae id vis. Cu 
-        illum labitur vis, no nam case option. Te purto vivendo quaerendum 
-        per.`,
+        `We can implement so many different return distributions because we 
+        use Vine Copulas to specify the inter-relatedness of the assets in 
+        each of our asset universe "flavors".`,
+        `Vine Copulas allow us to strip away the shape of each individual 
+        asset's return profile before fitting the whole asset group's 
+        relationship structure. This allows us to separate out the 
+        "relatedness" piece completely. Then at a later step, we can re-apply 
+        the original distribution shape to each individual asset.`,
+        `Vine Copulas are a relatively new technique that has been used by 
+        central banks for risk modeling. We believe it also has a great use 
+        case for portfolio management!`,
       ]
     },
     {
@@ -73,20 +67,17 @@ const state = {
       header: "Tail Dependencies",
       image_src: "pink-307853_1280.png",
       paragraphs: [
-        `Lorem ipsum dolor sit amet, eirmod timeam legimus qui ex. Tamquam 
-        vocibus ea eum, mea laudem omnesque menandri cu. Eu vel consetetur 
-        dissentiunt, mei decore principes at, tollit graece ad mei. In epicurei 
-        comprehensam nam, vim ne lorem nostrud expetenda. Habeo vulputate 
-        vituperatoribus cu vim.`,
-        `Percipitur reformidans eam ne. Id sit etiam appareat, cum no dolore 
-        dignissim. Te appellantur mediocritatem ius, ius putent similique 
-        concludaturque cu. An cum purto duis, ius alia error dictas eu, ut sit 
-        solum falli. Mel dicam ancillae constituam ea, an eos hinc fabulas, vis 
-        primis invidunt ei.`,
-        `Inermis maluisset no pri. Integre persequeris quo ea, ut convenire 
-        maluisset interpretaris mea. Recteque convenire repudiandae id vis. Cu 
-        illum labitur vis, no nam case option. Te purto vivendo quaerendum 
-        per.`,
+        `Using Vine Copulas allows us to model complex tail-event behavior. 
+        For example, in a simple two-asset stock-bond portfolio, we can assume 
+        a steady-state correlation between the two assets of 0.4. However, by 
+        using the right pair copula to model the joint return dependency, we 
+        can specify that this correlation approaches 1.0 at the bottom few 
+        percentiles of the return distribution. In other words, we can model 
+        that correlations converge to 1 during the worst possible market 
+        environments.`,
+        `This behavior is fully customizable. Using a Vine Copula approach 
+        gives us maximum flexibility to specify any kind of interrelatedness 
+        amongst our assets in our chosen investment universe.`,
       ]
     },
     {
@@ -94,20 +85,20 @@ const state = {
       header: "Expressing Views on Return Expectations",
       image_src: "smartphone-1184883_1280.png",
       paragraphs: [
-        `Lorem ipsum dolor sit amet, eirmod timeam legimus qui ex. Tamquam 
-        vocibus ea eum, mea laudem omnesque menandri cu. Eu vel consetetur 
-        dissentiunt, mei decore principes at, tollit graece ad mei. In epicurei 
-        comprehensam nam, vim ne lorem nostrud expetenda. Habeo vulputate 
-        vituperatoribus cu vim.`,
-        `Percipitur reformidans eam ne. Id sit etiam appareat, cum no dolore 
-        dignissim. Te appellantur mediocritatem ius, ius putent similique 
-        concludaturque cu. An cum purto duis, ius alia error dictas eu, ut sit 
-        solum falli. Mel dicam ancillae constituam ea, an eos hinc fabulas, vis 
-        primis invidunt ei.`,
-        `Inermis maluisset no pri. Integre persequeris quo ea, ut convenire 
-        maluisset interpretaris mea. Recteque convenire repudiandae id vis. Cu 
-        illum labitur vis, no nam case option. Te purto vivendo quaerendum 
-        per.`,
+        `After we simulate percentile-returns using our inter-relatedness 
+        model, we usually re-apply the original asset's return distribution 
+        shape. In other words, if we are modeling an asset from historical 
+        data that had an average return of 6% and a standard deviation of 10%, 
+        we usually re-apply those marginals to that asset in the joint 
+        distribution.`,
+        `However, that's not required. For example, say we have a ten asset 
+        class universe that we are basing off of historical data. We can model 
+        a vine copula structure, best-fitting the copula structure. But, if we 
+        feel the historical look is not appropriate for forward-looking 
+        forecasts for one of the assets, we can apply our own expectations of 
+        return and risk for that asset only, without interfering with the 
+        "interrelatedness" picture overall, or with the return and risk 
+        characteristics of the other assets. Pretty cool!`,
       ]
     },
   ]
