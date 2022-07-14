@@ -127,6 +127,12 @@
                 display: true,
                 text: 'Returns',
               },
+              ticks: {
+                // Display y axis labels as percentage returns
+                callback: function(value) {
+                  return (value*100).toFixed(2) + "%"
+                },
+              }
             },
           },
         },
