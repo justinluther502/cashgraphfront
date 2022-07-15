@@ -7,14 +7,18 @@
     >
     </frontier-chart>
     <v-row>
-      <v-slider
-        class="ps-16 pe-6 pt-10"
-        min="0"
-        :max="port_risks.length - 1"
-        thumb-label="always"
-        v-model="slice"
-      >
-      </v-slider>
+      <v-col class="col-1"/>
+      <v-col class="col-11">
+        <v-slider
+          class="ps-2 pe-4 pt-10"
+          min="0"
+          :max="port_risks.length - 1"
+          ticks="always"
+          thumb-label="always"
+          v-model="slice"
+        >
+        </v-slider>
+      </v-col>
     </v-row>
     <v-overlay
       absolute
