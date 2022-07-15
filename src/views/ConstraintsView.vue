@@ -2,6 +2,17 @@
   <div>
     <view-header :title="title" :title_prefix="title_prefix"/>
     <v-row>
+      <v-col class="col-6">
+        <v-btn
+          color="primary"
+          block
+          @click="lockConstraints"
+        >
+          Lock in current constraints
+        </v-btn>
+      </v-col>
+    </v-row>
+    <v-row>
       <v-col cols="12" md="6">
         <v-card class="mb-6" elevation="8">
           <v-card-title>
@@ -29,43 +40,23 @@
             Constraints
           </v-card-title>
           <v-card-text>
-            <v-row class="pb-8">
-              <v-col>
-                Asset
-              </v-col>
-              <v-col>
-                Minimums
-              </v-col>
-              <v-col>
-                Maximums
-              </v-col>
-            </v-row>
             <v-row
-              v-for="(_, index) in flavors[selection]['constraints']['mins']"
-              :key="index"
+              v-for="asset, index in flavors[selection]['assets']"
+              :key="asset"
             >
-              <v-col>
-                {{ flavors[selection]['assets'][index] }}
-              </v-col>
-              <v-col>
-                <v-slider
-                  v-model="flavors[selection]['constraints']['mins'][index]"
+              <v-col class="col-4">{{asset}}</v-col>
+              <v-col class="col-8">
+                <v-range-slider
                   min="0.0"
                   max="1.0"
                   thumb-label="always"
                   step="0.01"
+                  v-model="constraints[index]"
                 >
-                </v-slider>
-              </v-col>
-              <v-col>
-                <v-slider
-                  v-model="flavors[selection]['constraints']['maxs'][index]"
-                  min="0.0"
-                  max="1.0"
-                  thumb-label="always"
-                  step="0.01"
-                >
-                </v-slider>
+                <template v-slot:thumb-label="props">
+                  {{ (props.value * 100).toFixed(0) }}%
+                </template>
+                </v-range-slider>
               </v-col>
             </v-row>
           </v-card-text>
@@ -76,25 +67,50 @@
 </template>
 
 <script>
-  import viewHeader from "@/components/ViewHeader"
-  import {get, sync} from "vuex-pathify"
+import viewHeader from "@/components/ViewHeader"
+import {get} from "vuex-pathify"
 
-  export default {
-    name: "ConstraintsView.vue",
-    components: {
-      viewHeader,
+export default {
+  name: "ConstraintsView.vue",
+  components: {
+    viewHeader,
+  },
+  computed: {
+    flavors: get("flavors/flavors"),
+    selection: get("flavors/selected_flavor_id"),
+  },
+  data() {
+    return {
+      title: "Constraints",
+      title_prefix: "Portfolio weight constraints",
+      constraints: [],
+      range_vals: [0.0, 1.0],
+      // range_rules: [v => v[1] - v[0] >= 0.1 ||
+      //   "Leave a wider range for this asset or things will get weird"]
+    }
+  },
+  mounted() {
+    this.startingConstraints()
+  },
+  methods: {
+    startingConstraints() {
+      //
+      for (let i = 0; i < this.flavors[this.selection]['constraints']['mins']
+        .length; i++) {
+        this.constraints.push([this.flavors[this.selection]['constraints'][
+          'mins'][i], this.flavors[this.selection]['constraints']['maxs'][i]])
+      }
     },
-    computed: {
-      flavors: sync("flavors/flavors"),
-      selection: get("flavors/selected_flavor_id"),
-    },
-    data() {
-      return {
-        title: "Constraints",
-        title_prefix: "Portfolio weight constraints",
+    lockConstraints() {
+      for (let i = 0; i < this.constraints.length; i++) {
+        this.flavors[this.selection]['constraints']['mins'][i] =
+          this.constraints[i][0]
+        this.flavors[this.selection]['constraints']['maxs'][i] =
+          this.constraints[i][1]
       }
     },
   }
+}
 </script>
 
 <style scoped>
