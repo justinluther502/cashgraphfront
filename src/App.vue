@@ -6,7 +6,6 @@
       app
       class="deep-purple accent-4"
       dark
-      bottom
     >
       <drawer-content/>
     </v-navigation-drawer>
