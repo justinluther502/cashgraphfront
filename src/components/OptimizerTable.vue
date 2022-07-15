@@ -65,10 +65,12 @@
             {{ flavors[flavor_id]['assets'][idx] }}
           </td>
           <td>
-            {{ flavors[flavor_id]['constraints']['mins'][idx] * 100 }}%
+            {{ (flavors[flavor_id]['constraints']['mins'][
+            idx] * 100).toFixed(0) }}%
           </td>
           <td>
-            {{ flavors[flavor_id]['constraints']['maxs'][idx] * 100 }}%
+            {{ (flavors[flavor_id]['constraints']['maxs'][
+            idx] * 100).toFixed(0) }}%
           </td>
         </tr>
         </tbody>
