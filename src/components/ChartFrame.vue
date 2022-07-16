@@ -7,17 +7,37 @@
     >
     </frontier-chart>
     <v-row>
-      <v-col class="col-1"/>
-      <v-col class="col-11">
+      <v-col class="col-1 pb-0 mb-0"/>
+      <v-col class="col-11 mb-0 pb-0">
         <v-slider
-          class="ps-2 pe-4 pt-10"
+          class="ps-2 pe-4 pt-10 pb-0 mb-0"
           min="0"
           :max="port_risks.length - 1"
           ticks="always"
           thumb-label="always"
           v-model="slice"
+          color="indigo darken-4"
+          track-color="blue accent-2"
+          dense
         >
         </v-slider>
+      </v-col>
+    </v-row>
+    <v-row class="my-0 py-0">
+      <v-col class="col-1 my-0 py-0"/>
+      <v-col class="col-5 my-0 py-0">
+        <v-card class="py-0 my-0" elevation="0">
+          <v-card-text class="text-center">
+            &larr; Less Risky, Lower Return
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col class="col-6 my-0 py-0">
+        <v-card class="py-0 my-0" elevation="0">
+          <v-card-text class="text-center">
+            More Risky, Higher Return &rarr;
+          </v-card-text>
+        </v-card>
       </v-col>
     </v-row>
     <v-overlay
