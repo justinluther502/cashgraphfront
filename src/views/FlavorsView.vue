@@ -2,7 +2,7 @@
   <div>
     <view-header :title="title" :title_prefix="title_prefix"/>
     <v-row>
-      <v-col class="col-6">
+      <v-col cols="12" md="6">
         <v-select
           v-model="flavor_selection"
           :items="flavors"
