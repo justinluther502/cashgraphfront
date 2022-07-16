@@ -1,7 +1,7 @@
 import {make} from 'vuex-pathify'
 
 const state = {
-  new_user: false,
+  new_user: true,
   train_button: false,
   train_frontier: false,
   train_pie: false,
