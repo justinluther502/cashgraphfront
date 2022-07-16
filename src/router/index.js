@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+import AboutView from "@/views/AboutView"
+import ConstraintsView from "@/views/ConstraintsView"
+import ContactView from "@/views/ContactView"
 import DashboardView from "@/views/DashboardView"
 import FlavorsView from "@/views/FlavorsView"
-import ConstraintsView from "@/views/ConstraintsView"
 import RisksView from "@/views/RisksView"
-import AboutView from "@/views/AboutView"
 
 Vue.use(VueRouter)
 
@@ -15,9 +17,9 @@ const routes = [
     component: DashboardView
   },
   {
-    path: '/flavors',
-    name: 'flavors',
-    component: FlavorsView
+    path: '/about',
+    name: 'about',
+    component: AboutView
   },
   {
     path: '/constraints',
@@ -25,14 +27,19 @@ const routes = [
     component: ConstraintsView
   },
   {
+    path: '/contact',
+    name: 'contact',
+    component: ContactView
+  },
+  {
+    path: '/flavors',
+    name: 'flavors',
+    component: FlavorsView
+  },
+  {
     path: '/risks',
     name: 'risks',
     component: RisksView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: AboutView
   },
 ]
 

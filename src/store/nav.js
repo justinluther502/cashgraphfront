@@ -33,6 +33,12 @@ const state = {
       icon: 'mdi-engine-outline',
       to: '/about',
     },
+    {
+      id: 5,
+      title: 'Contact / Feedback',
+      icon: 'mdi-email',
+      to: '/contact',
+    },
   ],
 }
 

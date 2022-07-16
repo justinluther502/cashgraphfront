@@ -16,7 +16,7 @@
       v-for="(asset_row, idx1) in weight_array"
       :key="idx1"
     >
-      <th>{{ labels[idx1] }} </th>
+      <th>{{ labels[idx1] }}</th>
       <td
         v-for="(weight, idx2) in asset_row"
         :key="idx2"
