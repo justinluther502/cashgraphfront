@@ -85,13 +85,11 @@ export default {
   data() {
     return {
       title: "Constraints",
-      title_prefix: "Portfolio weight constraints",
+      title_prefix: "Set minimum and maximum portfolio weights for each asset",
       glob_constraints: [0.0, 1.0],
       constraints: [],
       range_vals: [0.0, 1.0],
       constraint_key: 0,
-      // range_rules: [v => v[1] - v[0] >= 0.1 ||
-      //   "Leave a wider range for this asset or things will get weird"]
     }
   },
   mounted() {
