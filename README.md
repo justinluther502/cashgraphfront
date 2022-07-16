@@ -1,7 +1,7 @@
 # CashGraphs
 
 ### Project Description
-CashGraphs is a web app for running 
+CashGraphs is a fintech web app for running 
 [modern portfolio theory](https://en.wikipedia.org/wiki/Modern_portfolio_theory)
  optimizations. Select a "flavor" to specify your investable asset universe, a 
 risk metric, and any weight constraints, and then run the optimizer. The 
@@ -10,6 +10,10 @@ all risk preferences.
 
 ### Live Site
 [https://www.cashgraphs.com](https://www.cashgraphs.com "CashGraphs Live Demo")
+
+### Who is it for?
+Anyone who manages securities portfolios or is involved in the asset allocation 
+process. 
 
 ### Under the Hood
 Frontend is Vue 2 + Vuetify. There is no styling beyond the Vuetify defaults 
