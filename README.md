@@ -1,4 +1,4 @@
-# cashgraphfront
+# CashGraphs
 
 ## Project setup
 ```
@@ -10,15 +10,8 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Project Description
+CashGraphs is a web app for running modern portfolio theory optimizations. 
+Select a "flavor" to specify your investable asset universe, a risk metric, and 
+any weight constraints, and then run the optimizer. The algorithm will pick out 
+a full efficient frontier of optimized portfolios for all risk preferences.
