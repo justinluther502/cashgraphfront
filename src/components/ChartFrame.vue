@@ -40,6 +40,7 @@
         </v-card>
       </v-col>
     </v-row>
+
     <v-overlay
       absolute
       :value="train_frontier"
@@ -49,23 +50,27 @@
       >
         <v-card-title class="purple--text">Efficient Frontier</v-card-title>
         <v-card-text class="black--text">
-          After your optimization finishes running, the efficient frontier will
-          display here. You can see the original assets, as well as the new
-          optimized portfolios. Higher = better returns. Further right = more
-          risk. Adjust the slider based on your preferred level of portfolio
-          risk. Again, further right = more risky.
+          The efficient frontier will display here after the optimizer runs.
         </v-card-text>
         <v-card-actions>
           <v-btn
             color="deep-purple darken-4"
-            @click="doneTrainFrontier"
             text
+            @click.stop="doneTrainFrontier"
           >
-            OK, got it
+            OK, What Else?
+          </v-btn>
+          <v-btn
+            color="red"
+            text
+            @click.stop="train_frontier = false"
+          >
+            Exit Tutorial
           </v-btn>
         </v-card-actions>
       </v-card>
     </v-overlay>
+
   </span>
 </template>
 

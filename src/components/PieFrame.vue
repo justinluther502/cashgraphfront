@@ -10,26 +10,31 @@
       absolute
       :value="train_pie"
     >
-          <v-card
-            color="white"
-          >
-        <v-card-title class="purple--text">Optimized Portfolio</v-card-title>
+      <v-card
+        color="white"
+      >
+        <v-card-title class="purple--text">Optimizer Inputs</v-card-title>
         <v-card-text class="black--text">
-          After you run the optimizer and select your preferred risk level,
-          check out your optimized portfolio here. This pie chart automatically
-          refreshes if you adjust the risk slider.
+          The composition of your selected portfolio will show up here.
         </v-card-text>
         <v-card-actions>
           <v-btn
             color="deep-purple darken-4"
-            @click="doneTrainingPie"
             text
+            @click.stop="doneTrainingPie"
           >
-            OK, got it
+            OK, What Else?
+          </v-btn>
+          <v-btn
+            color="red"
+            text
+            @click.stop="train_pie = false"
+          >
+            Exit Tutorial
           </v-btn>
         </v-card-actions>
       </v-card>
-        </v-overlay>
+    </v-overlay>
   </span>
 </template>
 

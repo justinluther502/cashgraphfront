@@ -86,24 +86,27 @@
       >
         <v-card-title class="purple--text">Optimizer Inputs</v-card-title>
         <v-card-text class="black--text">
-          Before you run the optimizer, tell us what kind of optimization you
-          want to run. What sorts of securities do you want to include in the
-          optimization? Set your optimization flavor here. Do you have any
-          investment constraints? Set minimum and maximum investments for each
-          portfolio security. What kind of risk do you want to minimize? Set
-          the risk metric to variance, semi-variance, etc.
+          Pick what flavor of optimization you want to run here.
         </v-card-text>
         <v-card-actions>
           <v-btn
             color="deep-purple darken-4"
-            @click="doneTrainSelections"
             text
+            @click.stop="doneTrainSelections"
           >
-            OK, got it
+            OK, What Else?
+          </v-btn>
+          <v-btn
+            color="red"
+            text
+            @click.stop="train_selections = false"
+          >
+            Exit Tutorial
           </v-btn>
         </v-card-actions>
       </v-card>
     </v-overlay>
+
   </div>
 </template>
 
@@ -126,7 +129,7 @@ export default {
       this.train_selections = false
       this.train_frontier = true
       this.$vuetify.goTo('#frontier-frame')
-    }
+    },
   }
 }
 </script>
