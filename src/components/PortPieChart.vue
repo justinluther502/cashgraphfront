@@ -99,6 +99,9 @@
         chartOptions: {
           responsive: true,
           maintainAspectRatio: false,
+          animation: {
+            animateRotate: false,
+          }
         },
       }
     },
