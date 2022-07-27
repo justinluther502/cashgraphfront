@@ -55,7 +55,6 @@
 
 <script>
 import {sync} from 'vuex-pathify'
-import store from '../store'
 
 export default {
   name: "RiskCard.vue",
@@ -71,7 +70,7 @@ export default {
   },
   methods: {
     selectRisk() {
-      store.set('mpt_params/selected_risk', this.name)
+      this.selected_risk = this.name
     },
   },
 }
