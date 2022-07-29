@@ -89,6 +89,32 @@ const state = {
         maxs: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
       },
     },
+    {
+      id: 3,
+      name: 'seven_broad',
+      label: 'Seven Asset Broad Market',
+      description1: `Seven asset portfolio including equity, fixed income, and 
+      REITs. Indices are as broad as possible and include EM and Euro exposure. 
+      Notably absent is Euro IG bonds. Data source is St. Louis FRED time 
+      series.`,
+      description2: `We recommend variance as a risk measure for this flavor.
+      Semivariance won't add much because all of the marginals are normal.`,
+      assets: [
+        "USD IG Bonds",
+        "USD HY Bonds",
+        "EUR HY Bonds",
+        "EM Bonds - EUR and USD, IG and HY",
+        "US Large Cap Stocks",
+        "US Small Cap Stocks",
+        "REITs",
+      ],
+      marginal_images: [],
+      pair_cop_images: [],
+      constraints: {
+        mins: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        maxs: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+      },
+    },
   ],
   selected_flavor_id: 0,
 }
