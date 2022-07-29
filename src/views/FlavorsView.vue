@@ -10,6 +10,7 @@
           :item-text="'label'"
           solo
           background-color="pink accent-2"
+          :onchange="stale = true"
         >
         </v-select>
       </v-col>
@@ -61,6 +62,7 @@ export default {
   computed: {
     flavors: get("flavors/flavors"),
     flavor_selection: sync("flavors/selected_flavor_id"),
+    stale: sync('frontier/stale_chart'),
   },
   data() {
     return {

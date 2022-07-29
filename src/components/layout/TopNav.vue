@@ -73,6 +73,7 @@ export default {
     refresh_key: sync('frontier/refresh_key'),
     waiting: sync('frontier/api_waiting'),
     show_drawer: sync('nav/show_drawer'),
+    stale: sync('frontier/stale_chart'),
   },
   data() {
     return {
@@ -106,6 +107,7 @@ export default {
             store.set('frontier/portfolio_returns', res.data['Portfolio Returns'])
             store.set('frontier/portfolio_weights', res.data['Portfolio Weights'])
             this.waiting = null
+            this.stale = false
             this.refresh_key++
           },
         )

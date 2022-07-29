@@ -71,7 +71,7 @@
 
 <script>
 import viewHeader from "@/components/ViewHeader"
-import {get} from "vuex-pathify"
+import {get, sync} from "vuex-pathify"
 
 export default {
   name: "ConstraintsView.vue",
@@ -81,6 +81,7 @@ export default {
   computed: {
     flavors: get("flavors/flavors"),
     selection: get("flavors/selected_flavor_id"),
+    stale: sync('frontier/stale_chart'),
   },
   data() {
     return {
@@ -110,6 +111,7 @@ export default {
           this.constraints[i][0]
         this.flavors[this.selection]['constraints']['maxs'][i] =
           this.constraints[i][1]
+        this.stale = true
       }
     },
     globalSetConstraints() {

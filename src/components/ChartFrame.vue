@@ -1,6 +1,14 @@
 <template>
   <span>
+    <v-skeleton-loader
+      v-if="stale"
+      class="mx-auto"
+      max-width="400"
+      max-height="325"
+      type="image"
+    ></v-skeleton-loader>
     <frontier-chart
+      v-if="!stale"
       :asset_points="asset_risks.map( (v,i) => ({ x: v, y: asset_rets[i] }) )"
       :port_points="port_risks.map( (v,i) => ({ x: v, y: port_rets[i] }) )"
       :asset_labels="asset_labels"
@@ -94,7 +102,8 @@ export default {
     train_frontier: sync('user/train_frontier'),
     train_pie: sync('user/train_pie'),
     slice: sync('frontier/slice'),
-    flavors: get('flavors')
+    flavors: get('flavors'),
+    stale: get('frontier/stale_chart')
   },
   methods: {
     doneTrainFrontier() {

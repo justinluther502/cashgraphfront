@@ -60,6 +60,7 @@ export default {
   name: "RiskCard.vue",
   computed: {
     selected_risk: sync('mpt_params/selected_risk'),
+    stale: sync('frontier/stale_chart'),
   },
   props: {
     name: String,
@@ -71,6 +72,7 @@ export default {
   methods: {
     selectRisk() {
       this.selected_risk = this.name
+      this.stale = true
     },
   },
 }
