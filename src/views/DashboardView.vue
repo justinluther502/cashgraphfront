@@ -62,7 +62,12 @@
           <v-card-title>
             Selected Portfolio Composition
           </v-card-title>
-          <pie-frame/>
+          <v-skeleton-loader
+            class="pa-5"
+            type="image"
+            v-if="stale"
+          />
+          <pie-frame v-if="!stale" />
         </v-card>
       </v-col>
     </v-row>
