@@ -77,6 +77,7 @@
       asset_points: Array,
       port_points: Array,
       asset_labels: Array,
+      periodicity: String,
     },
     data() {
       return {
@@ -119,7 +120,7 @@
             x: {
               title: {
                 display: true,
-                text: 'Risks',
+                text: this.periodicity + ' Risks',
                 font: {
                   size: 18,
                 }
@@ -133,7 +134,7 @@
             y: {
               title: {
                 display: true,
-                text: 'Returns',
+                text: this.periodicity + ' Returns',
                 font: {
                   size: 18,
                 }

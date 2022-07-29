@@ -6,6 +6,7 @@ const state = {
       id: 0,
       name: 'six_std',
       label: 'Six Asset Classic',
+      periods: 'Monthly',
       description1: `Six Asset Classic is the first flavor we created. It 
       includes six asset classes, over a time period covering Jan 1980 through
       August 2020. Each asset class's marginal distribution is
@@ -39,6 +40,7 @@ const state = {
       id: 1,
       name: 'two_hy_wilshire',
       label: 'Basic Stock and Bond',
+      periods: 'Monthly',
       description1: `Simple two asset portfolio, HY stocks and bonds. 
       Historical basis covers October 1986 to May 2022. Historical returns are 
       pulled from St. Louis FRED under tickers: "ICE BofA US High Yield Index 
@@ -61,6 +63,7 @@ const state = {
       id: 2,
       name: 'twelve_measure',
       label: 'Twelve Assets',
+      periods: 'Annual',
       description1: `Twelve Asset portfolio inspired by the Measure of a Plan 
       site, using posted data from their "Investment Returns by Asset Class" 
       article. Note that the asset selection is not ideal because there is some
@@ -93,6 +96,7 @@ const state = {
       id: 3,
       name: 'seven_broad',
       label: 'Seven Asset Broad Market',
+      periods: 'Monthly',
       description1: `Seven asset portfolio including equity, fixed income, and 
       REITs. Indices are as broad as possible and include EM and Euro exposure. 
       Notably absent is Euro IG bonds. Data source is St. Louis FRED time 

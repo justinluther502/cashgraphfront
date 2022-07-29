@@ -4,6 +4,8 @@
       :asset_points="asset_risks.map( (v,i) => ({ x: v, y: asset_rets[i] }) )"
       :port_points="port_risks.map( (v,i) => ({ x: v, y: port_rets[i] }) )"
       :asset_labels="asset_labels"
+      :periodicity="flavors['flavors'][flavors['selected_flavor_id']][
+        'periods']"
     >
     </frontier-chart>
     <v-row>
@@ -92,6 +94,7 @@ export default {
     train_frontier: sync('user/train_frontier'),
     train_pie: sync('user/train_pie'),
     slice: sync('frontier/slice'),
+    flavors: get('flavors')
   },
   methods: {
     doneTrainFrontier() {
