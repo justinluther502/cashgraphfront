@@ -45,7 +45,14 @@
           <v-card-title>
             Portfolio Weights (%)
           </v-card-title>
-          <portfolio-weights/>
+          <v-skeleton-loader
+            class="ma-5"
+            type="table-tbody"
+            v-if="stale"
+          />
+          <portfolio-weights
+            v-if="!stale"
+          />
         </v-card>
       </v-col>
 
@@ -81,6 +88,7 @@ export default {
     loading: get('frontier/api_waiting'),
     refresh: get('frontier/refresh_key'),
     new_user: get('user/new_user'),
+    stale: get('frontier/stale_chart'),
   },
   components: {
     ChartFrame,
