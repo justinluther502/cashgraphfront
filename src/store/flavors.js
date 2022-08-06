@@ -119,6 +119,33 @@ const state = {
         maxs: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
       },
     },
+    {
+      id: 4,
+      name: 'six_broad_mod',
+      label: 'Six Asset Broad - Modified',
+      periods: 'Monthly',
+      description1: `Six asset portfolio including equity and fixed income. 
+      Indices are as broad as possible and include EM and Euro exposure. 
+      Notably absent is Euro IG bonds. Data source is St. Louis FRED time 
+      series. EM bond returns have been nerfed and EM bond risk has been 
+      buffed.`,
+      description2: `We recommend variance as a risk measure for this flavor.
+      Semivariance won't add much because all of the marginals are normal.`,
+      assets: [
+        "USD IG Bonds",
+        "USD HY Bonds",
+        "EUR HY Bonds",
+        "EM Bonds - EUR and USD, IG and HY",
+        "US Large Cap Stocks",
+        "US Small Cap Stocks",
+      ],
+      marginal_images: [],
+      pair_cop_images: [],
+      constraints: {
+        mins: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        maxs: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+      },
+    },
   ],
   selected_flavor_id: 0,
 }
