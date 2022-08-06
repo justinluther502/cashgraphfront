@@ -5,7 +5,7 @@ const state = {
     {
       id: 0,
       name: 'six_std',
-      label: 'Six Asset Classic',
+      label: 'CG Classic',
       periods: 'Monthly',
       description1: `Six Asset Classic is the first flavor we created. It 
       includes six asset classes, over a time period covering Jan 1980 through
@@ -18,9 +18,10 @@ const state = {
       and "ICE BofA US High Yield Index Total Return Index Value". 
       Expected returns from Gold have been reduced slightly from historicals.`,
       description2: `The copula graph is fully selected by the vine copula 
-      algorithm with no forced shapes.We recommend variance as a risk measure 
+      algorithm with no forced shapes. We recommend variance as a risk measure 
       for this flavor. Semivariance won't add much because all of the marginals 
-      are normal.`,
+      are normal. There are a few issues with this flavor. Nikkei returns do 
+      not include dividends, and there are some gaps in coverage.`,
       assets: [
         'Gold',
         'Emerging Market Corporate Bonds',
@@ -39,9 +40,9 @@ const state = {
     {
       id: 1,
       name: 'two_hy_wilshire',
-      label: 'Basic Stock and Bond',
+      label: 'Stocks vs Bonds',
       periods: 'Monthly',
-      description1: `Simple two asset portfolio, HY stocks and bonds. 
+      description1: `Simple two asset portfolio, stocks and HY bonds. 
       Historical basis covers October 1986 to May 2022. Historical returns are 
       pulled from St. Louis FRED under tickers: "ICE BofA US High Yield Index 
       Total Return Index Value", "Wilshire 5000 Total Market Full Cap Index".`,
@@ -62,7 +63,7 @@ const state = {
     {
       id: 2,
       name: 'twelve_measure',
-      label: 'Twelve Assets',
+      label: 'Twelve Asset Grab Bag',
       periods: 'Annual',
       description1: `Twelve Asset portfolio inspired by the Measure of a Plan 
       site, using posted data from their "Investment Returns by Asset Class" 
@@ -70,7 +71,8 @@ const state = {
       overlap. For example, HY US Bonds is a subset of All US Bonds. Time 
       period is 1985 to 2020 and the returns are real and annual.`,
       description2: `We recommend variance as a risk measure for this flavor.
-      Semivariance won't add much because all of the marginals are normal.`,
+      Semivariance won't add much because all of the marginals are normal. This 
+      flavor has issues with overlap and missing coverage.`,
       assets: [
         'US Large Cap Stocks',
         'US Small Cap Stocks',
@@ -95,12 +97,12 @@ const state = {
     {
       id: 3,
       name: 'seven_broad',
-      label: 'Seven Asset Broad Market',
+      label: 'Purple',
       periods: 'Monthly',
       description1: `Seven asset portfolio including equity, fixed income, and 
       REITs. Indices are as broad as possible and include EM and Euro exposure. 
       Notably absent is Euro IG bonds. Data source is St. Louis FRED time 
-      series.`,
+      series. REITs are extremely overallocated.`,
       description2: `We recommend variance as a risk measure for this flavor.
       Semivariance won't add much because all of the marginals are normal.`,
       assets: [
@@ -122,7 +124,7 @@ const state = {
     {
       id: 4,
       name: 'six_broad_mod',
-      label: 'Six Asset Broad - Modified',
+      label: 'Hot Purple',
       periods: 'Monthly',
       description1: `Six asset portfolio including equity and fixed income. 
       Indices are as broad as possible and include EM and Euro exposure. 
