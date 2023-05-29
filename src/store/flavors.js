@@ -148,6 +148,30 @@ const state = {
         maxs: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
       },
     },
+    {
+      id: 5,
+      name: 'ibkr_adjusted',
+      label: 'IBKR ETFs with Adjustments',
+      periods: 'Weekly',
+      description1: `Six asset portfolio of liquid index ETFs. Contains some 
+      adjustments by Luther Wealth for forward looking risk and return expectations.`,
+      description2: `We recommend variance as a risk measure for this flavor.
+      Semivariance won't add much because all of the marginals are normal.`,
+      assets: [
+        "USHY - High Yield Bonds",
+        "VCLT - IG Bonds",
+        "VEU - Global Stocks",
+        "VONE - Large Cap US Stocks",
+        "VTWO - Small Cap US Stocks",
+        "BCD - Commodities",
+      ],
+      marginal_images: [],
+      pair_cop_images: [],
+      constraints: {
+        mins: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+        maxs: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+      },
+    },
   ],
   selected_flavor_id: 0,
 }
